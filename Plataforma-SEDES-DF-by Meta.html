@@ -1,0 +1,2152 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SEDES-DF 2025 | Especialista em Direito e Legislação - Versão Final</title>
+<style>
+:root {
+  --bg: #f7f9fc;
+  --bg-alt: #ffffff;
+  --text: #1a1d23;
+  --text-muted: #5b6475;
+  --primary: #0d47a1;
+  --primary-light: #1e88e5;
+  --accent: #00bfa5;
+  --border: #dfe3ec;
+  --success: #2e7d32;
+  --warning: #f57c00;
+  --danger: #c62828;
+  --shadow: 0 4px 20px rgba(13, 71, 161, 0.08);
+  --radius: 12px;
+  --transition: all 0.3s ease;
+  --mark: #fff59d;
+}
+
+[data-theme="dark"] {
+  --bg: #0f1419;
+  --bg-alt: #1a1f25;
+  --text: #e6edf3;
+  --text-muted: #8b949e;
+  --primary: #4285f4;
+  --primary-light: #5c9aff;
+  --accent: #00d9bb;
+  --border: #2d333b;
+  --success: #4caf50;
+  --warning: #ffa726;
+  --danger: #ef5350;
+  --shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  --mark: #665c00;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+  transition: var(--transition);
+}
+
+mark {
+  background: var(--mark);
+  padding: 0 2px;
+  border-radius: 3px;
+}
+
+.header {
+  background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+  color: white;
+  padding: 1.5rem 1rem;
+  box-shadow: var(--shadow);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.header-content {
+  max-width: 1600px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.logo { display: flex; align-items: center; gap: 0.75rem; }
+.logo-icon { font-size: 2rem; }
+.logo h1 { font-size: 1.5rem; font-weight: 700; }
+.logo p { font-size: 0.875rem; opacity: 0.9; }
+
+.header-controls { display: flex; align-items: center; gap: 1rem; }
+
+.search-box { position: relative; }
+.search-box input {
+  padding: 0.5rem 2.5rem 0.5rem 1rem;
+  border: none;
+  border-radius: 50px;
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+  width: 200px;
+  backdrop-filter: blur(10px);
+  transition: var(--transition);
+}
+.search-box input::placeholder { color: rgba(255, 255, 255, 0.7); }
+.search-box input:focus { outline: none; background: rgba(255, 255, 255, 0.3); width: 250px; }
+.search-box .search-icon { position: absolute; right: 0.75rem; top: 50%; transform: translateY(-50%); pointer-events: none; }
+
+.btn {
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: var(--transition);
+  font-size: 0.875rem;
+}
+
+.btn-icon {
+  width: 40px;
+  height: 40px;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+  font-size: 1.25rem;
+}
+.btn-icon:hover { background: rgba(255, 255, 255, 0.3); transform: scale(1.05); }
+.btn-primary { background: var(--accent); color: white; }
+.btn-primary:hover { opacity: 0.9; transform: translateY(-2px); box-shadow: 0 4px 12px rgba(0, 191, 165, 0.4); }
+.btn-danger { background: var(--danger); color: white; }
+.btn-danger:hover { opacity: 0.9; transform: translateY(-2px); }
+
+.progress-container {
+  background: var(--bg-alt);
+  padding: 1rem;
+  box-shadow: var(--shadow);
+  border-bottom: 1px solid var(--border);
+}
+
+.progress-content {
+  max-width: 1600px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.progress-bar-wrapper {
+  flex: 1;
+  min-width: 250px;
+  height: 12px;
+  background: var(--border);
+  border-radius: 50px;
+  overflow: hidden;
+}
+
+.progress-bar {
+  height: 100%;
+  background: linear-gradient(90deg, var(--accent), var(--primary-light));
+  width: 0%;
+  transition: width 0.5s ease;
+  border-radius: 50px;
+}
+
+.progress-text { font-weight: 600; color: var(--text-muted); font-size: 0.875rem; }
+
+.tabs {
+  background: var(--bg-alt);
+  border-bottom: 1px solid var(--border);
+  position: sticky;
+  top: 88px;
+  z-index: 999;
+}
+
+.tabs-container {
+  max-width: 1600px;
+  margin: 0 auto;
+  display: flex;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+.tabs-container::-webkit-scrollbar { display: none; }
+
+.tab-button {
+  padding: 1rem 1.2rem;
+  background: none;
+  border: none;
+  color: var(--text-muted);
+  font-weight: 600;
+  cursor: pointer;
+  border-bottom: 3px solid transparent;
+  white-space: nowrap;
+  transition: var(--transition);
+  font-size: 0.9375rem;
+}
+
+.tab-button:hover { color: var(--primary); background: rgba(13, 71, 161, 0.05); }
+.tab-button.active { color: var(--primary); border-bottom-color: var(--accent); }
+.tab-button:disabled { opacity: 0.4; cursor: not-allowed; }
+
+.container { max-width: 1600px; margin: 0 auto; padding: 2rem 1rem; }
+.tab-content { display: none; animation: fadeIn 0.4s ease; }
+.tab-content.active { display: block; }
+@keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+
+.card {
+  background: var(--bg-alt);
+  border-radius: var(--radius);
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+  box-shadow: var(--shadow);
+  border: 1px solid var(--border);
+  transition: var(--transition);
+}
+.card:hover { box-shadow: 0 8px 30px rgba(13, 71, 161, 0.12); }
+
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.card-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--primary);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.badge {
+  padding: 0.25rem 0.75rem;
+  border-radius: 50px;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+.badge-primary { background: rgba(13, 71, 161, 0.1); color: var(--primary); }
+.badge-accent { background: rgba(0, 191, 165, 0.1); color: var(--accent); }
+.badge-success { background: rgba(46, 125, 50, 0.1); color: var(--success); }
+.badge-warning { background: rgba(245, 124, 0, 0.1); color: var(--warning); }
+.badge-danger { background: rgba(198, 40, 40, 0.1); color: var(--danger); }
+
+.checkbox-wrapper {
+  display: flex;
+  align-items: start;
+  gap: 0.75rem;
+  margin: 0.75rem 0;
+  cursor: pointer;
+}
+.checkbox-wrapper input[type="checkbox"] {
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+  accent-color: var(--accent);
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+.checkbox-wrapper label { cursor: pointer; flex: 1; }
+
+h2, h3, h4 { margin: 1.5rem 0 1rem; color: var(--primary); }
+h2 { font-size: 1.75rem; }
+h3 { font-size: 1.375rem; }
+h4 { font-size: 1.125rem; }
+
+ul, ol { margin-left: 1.5rem; margin-bottom: 1rem; }
+li { margin: 0.5rem 0; }
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1rem 0;
+  overflow-x: auto;
+  display: block;
+}
+th, td { padding: 0.75rem; text-align: left; border-bottom: 1px solid var(--border); }
+th { background: rgba(13, 71, 161, 0.05); font-weight: 600; color: var(--primary); }
+tr:hover { background: rgba(13, 71, 161, 0.02); }
+
+.question-card {
+  background: var(--bg-alt);
+  border: 2px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+  transition: var(--transition);
+}
+.question-card.answered-correct { border-color: var(--success); background: rgba(46, 125, 50, 0.05); }
+.question-card.answered-wrong { border-color: var(--danger); background: rgba(198, 40, 0.05); }
+.question-card.marked-review { border-color: var(--warning); }
+
+.question-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem; flex-wrap: wrap; gap: 0.5rem; }
+.question-number { font-weight: 700; color: var(--primary); }
+.question-text { margin-bottom: 1rem; font-size: 1rem; line-height: 1.7; }
+
+.options { display: flex; flex-direction: column; gap: 0.75rem; }
+.option {
+  padding: 0.875rem 1rem;
+  border: 2px solid var(--border);
+  border-radius: 8px;
+  cursor: pointer;
+  transition: var(--transition);
+  display: flex;
+  gap: 0.75rem;
+}
+.option:hover { border-color: var(--primary-light); background: rgba(30, 136, 229, 0.05); }
+.option.selected { border-color: var(--primary); background: rgba(13, 71, 161, 0.1); }
+.option.correct { border-color: var(--success); background: rgba(46, 125, 50, 0.1); }
+.option.wrong { border-color: var(--danger); background: rgba(198, 40, 0.1); }
+.option-letter { font-weight: 700; color: var(--primary); flex-shrink: 0; }
+
+.fundamento {
+  margin-top: 1rem;
+  padding: 1rem;
+  background: rgba(0, 191, 165, 0.1);
+  border-left: 4px solid var(--accent);
+  border-radius: 4px;
+  display: none;
+}
+.fundamento.show { display: block; }
+.fundamento strong { color: var(--accent); }
+
+.timeline { position: relative; padding-left: 2rem; }
+.timeline::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 3px;
+  background: linear-gradient(180deg, var(--primary), var(--accent));
+}
+.timeline-item { position: relative; margin-bottom: 2rem; }
+.timeline-item::before {
+  content: '';
+  position: absolute;
+  left: -2.4rem;
+  top: 0.5rem;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--accent);
+  border: 3px solid var(--bg-alt);
+  box-shadow: 0 0 0 4px rgba(0, 191, 165, 0.2);
+}
+.timeline-date { font-weight: 700; color: var(--primary); margin-bottom: 0.5rem; }
+
+.checklist { list-style: none; margin-left: 0; }
+.checklist li { padding-left: 2rem; position: relative; margin: 0.75rem 0; }
+.checklist li::before {
+  content: '✓';
+  position: absolute;
+  left: 0;
+  color: var(--accent);
+  font-weight: 700;
+  font-size: 1.25rem;
+}
+
+.alert {
+  padding: 1rem 1.25rem;
+  border-radius: 8px;
+  margin: 1rem 0;
+  border-left: 4px solid;
+}
+.alert-info { background: rgba(30, 136, 229, 0.1); border-color: var(--primary-light); color: var(--text); }
+.alert-warning { background: rgba(245, 124, 0, 0.1); border-color: var(--warning); }
+.alert-success { background: rgba(46, 125, 50, 0.1); border-color: var(--success); }
+.alert-danger { background: rgba(198, 40, 40, 0.1); border-color: var(--danger); }
+
+.artigo {
+  background: rgba(13, 71, 161, 0.03);
+  padding: 1rem;
+  border-left: 3px solid var(--primary);
+  margin: 1rem 0;
+  border-radius: 4px;
+}
+.artigo-title { font-weight: 700; color: var(--primary); margin-bottom: 0.5rem; }
+
+.mapa-mental {
+  background: linear-gradient(135deg, rgba(13, 71, 161, 0.05), rgba(0, 191, 165, 0.05));
+  padding: 1.5rem;
+  border-radius: var(--radius);
+  margin: 1rem 0;
+  border: 2px dashed var(--primary-light);
+}
+.mapa-central {
+  text-align: center;
+  font-weight: 700;
+  color: var(--primary);
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
+  padding: 0.5rem;
+  background: var(--bg-alt);
+  border-radius: 8px;
+  box-shadow: var(--shadow);
+}
+.mapa-ramos {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+}
+.mapa-ramo {
+  background: var(--bg-alt);
+  padding: 0.75rem;
+  border-radius: 8px;
+  border-left: 3px solid var(--accent);
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+  margin: 1.5rem 0;
+}
+.stat-card {
+  background: linear-gradient(135deg, var(--primary), var(--primary-light));
+  color: white;
+  padding: 1.5rem;
+  border-radius: var(--radius);
+  text-align: center;
+}
+.stat-number { font-size: 2rem; font-weight: 700; margin-bottom: 0.25rem; }
+.stat-label { font-size: 0.875rem; opacity: 0.9; }
+
+.chart-container {
+  margin: 1.5rem 0;
+  padding: 1rem;
+  background: var(--bg-alt);
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+}
+.chart-bar { display: flex; align-items: center; gap: 1rem; margin: 0.75rem 0; }
+.chart-label { width: 160px; font-size: 0.875rem; font-weight: 600; color: var(--text-muted); }
+.chart-bar-wrapper { flex: 1; height: 28px; background: var(--border); border-radius: 50px; overflow: hidden; }
+.chart-bar-fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--primary), var(--accent));
+  border-radius: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding-right: 0.75rem;
+  color: white;
+  font-size: 0.75rem;
+  font-weight: 700;
+  transition: width 1s ease;
+}
+
+.lei-seca-filters {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  margin-bottom: 1rem;
+}
+.filter-btn {
+  padding: 0.5rem 1rem;
+  border: 2px solid var(--border);
+  background: var(--bg-alt);
+  color: var(--text);
+  border-radius: 50px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 0.875rem;
+  transition: var(--transition);
+}
+.filter-btn:hover, .filter-btn.active {
+  border-color: var(--primary);
+  background: var(--primary);
+  color: white;
+}
+
+.artigo-lei-seca {
+  margin-bottom: 1.5rem;
+  padding: 1rem;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--bg-alt);
+}
+.artigo-lei-seca.decorado { border-color: var(--success); background: rgba(46, 125, 50, 0.05); }
+.artigo-lei-seca-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.75rem;
+}
+.artigo-numero { font-weight: 700; color: var(--primary); font-size: 1rem; }
+
+.hidden { display: none !important; }
+
+.simulado-header {
+  position: sticky;
+  top: 88px;
+  background: var(--bg-alt);
+  padding: 1rem;
+  border-bottom: 3px solid var(--danger);
+  z-index: 900;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.timer-display {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--danger);
+}
+.timer-warning { animation: pulse 1s infinite; }
+@keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.6; } }
+
+.cartao-resposta {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(50px, 1fr));
+  gap: 0.5rem;
+  margin: 1rem 0;
+}
+.cartao-item {
+  aspect-ratio: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid var(--border);
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 700;
+  transition: var(--transition);
+}
+.cartao-item.answered { background: var(--primary); color: white; border-color: var(--primary); }
+.cartao-item.marked { background: var(--warning); color: white; border-color: var(--warning); }
+.cartao-item.current { border-color: var(--accent); border-width: 3px; }
+
+.discursiva-container {
+  margin: 1rem 0;
+}
+.discursiva-textarea {
+  width: 100%;
+  min-height: 400px;
+  padding: 1rem;
+  border: 2px solid var(--border);
+  border-radius: 8px;
+  background: var(--bg-alt);
+  color: var(--text);
+  font-family: 'Courier New', monospace;
+  font-size: 0.95rem;
+  line-height: 1.8;
+  resize: vertical;
+}
+.discursiva-textarea:focus { outline: none; border-color: var(--primary); }
+
+.result-card {
+  background: linear-gradient(135deg, rgba(13, 71, 161, 0.1), rgba(0, 191, 165, 0.1));
+  padding: 2rem;
+  border-radius: var(--radius);
+  margin: 1rem 0;
+  text-align: center;
+}
+.result-score {
+  font-size: 3rem;
+  font-weight: 700;
+  color: var(--primary);
+  margin: 1rem 0;
+}
+
+@media (max-width: 768px) {
+  .logo h1 { font-size: 1.25rem; }
+  .logo p { display: none; }
+  .search-box input { width: 150px; }
+  .tab-button { padding: 0.75rem 0.8rem; font-size: 0.8rem; }
+  .card { padding: 1rem; }
+  .header { padding: 1rem; }
+  .tabs { top: 72px; }
+  .chart-label { width: 120px; font-size: 0.75rem; }
+  .simulado-header { top: 72px; }
+  .cartao-resposta { grid-template-columns: repeat(auto-fill, minmax(40px, 1fr)); }
+}
+</style>
+</head>
+<body>
+  <header class="header">
+    <div class="header-content">
+      <div class="logo">
+        <span class="logo-icon">⚖️</span>
+        <div>
+          <h1>SEDES-DF 2025</h1>
+          <p>Especialista em Direito e Legislação - Versão Final Autossuficiente</p>
+        </div>
+      </div>
+      <div class="header-controls">
+        <div class="search-box">
+          <input type="text" id="searchInput" placeholder="Buscar em toda plataforma...">
+          <span class="search-icon">🔍</span>
+        </div>
+        <button class="btn btn-icon" id="darkModeToggle" title="Alternar tema">🌙</button>
+        <button class="btn btn-primary" id="exportBtn">📥 Exportar Progresso</button>
+      </div>
+    </div>
+  </header>
+
+  <div class="progress-container">
+    <div class="progress-content">
+      <span class="progress-text">Progresso Geral:</span>
+      <div class="progress-bar-wrapper">
+        <div class="progress-bar" id="globalProgress"></div>
+      </div>
+      <span class="progress-text" id="progressPercent">0%</span>
+      <span class="progress-text" id="progressHours">0h / 445h</span>
+    </div>
+  </div>
+
+  <nav class="tabs">
+    <div class="tabs-container">
+      <button class="tab-button active" data-tab="estudar">📚 Estudar - Ordem por Peso</button>
+      <button class="tab-button" data-tab="leiseca">📖 Lei Seca Top 120</button>
+      <button class="tab-button" data-tab="questoes">✍️ 100 Questões</button>
+      <button class="tab-button" data-tab="simulado">🎯 Simulado Completo</button>
+      <button class="tab-button" data-tab="cronograma">📅 Cronograma 5h/dia</button>
+      <button class="tab-button" data-tab="discursiva">📝 Discursiva</button>
+      <button class="tab-button" data-tab="legislacao">🔗 Legislação</button>
+    </div>
+  </nav>
+
+  <main class="container">
+    <!-- ABA ESTUDAR AUTOSSUFICIENTE -->
+    <section id="estudar" class="tab-content active">
+      <div class="alert alert-danger">
+        <strong>🎯 ORDEM DE ESTUDO POR PESO NA PROVA:</strong> Análise das 8 provas Quadrix + Edital retificado. Estude nesta ordem para garantir 80% dos pontos: 1º Dir. Adm + LC 840, 2º Constitucional, 3º LOAS/SUAS, 4º Proteções Específicas, 5º LGPD/LAI, 6º DF, 7º Português, 8º Primeiros Socorros.
+      </div>
+
+      <div class="stats-grid">
+        <div class="stat-card">
+          <div class="stat-number">445h</div>
+          <div class="stat-label">Total - 89 dias x 5h</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number">35h</div>
+          <div class="stat-label">Horas/Semana</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number">120</div>
+          <div class="stat-label">Artigos Essenciais</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number">100</div>
+          <div class="stat-label">Questões Comentadas</div>
+        </div>
+      </div>
+
+      <!-- 1º PRIORIDADE: DIR ADM + LC 840 -->
+      <div class="card">
+        <div class="card-header">
+          <h2 class="card-title">1º PRIORIDADE - Direito Administrativo + LC 840/2011</h2>
+          <span class="badge badge-danger">Peso 30% da Prova</span>
+        </div>
+
+        <div class="alert alert-warning">
+          <strong>⚠️ FOCO MÁXIMO:</strong> LC 840/2011 aparece em 18% das questões. Atribuições do cargo 403 estão nos arts. 3º, 180, 184. Decore arts. 180-208 - Regime Disciplinar.
+        </div>
+
+        <h3>LC 840/2011 - TEXTO COMPLETO DOS ARTIGOS MAIS COBRADOS</h3>
+
+        <div class="artigo">
+          <div class="artigo-title">Art. 3º - Conceitos Fundamentais</div>
+          <p><mark>Servidor público</mark> é a pessoa legalmente investida em cargo público. <mark>Cargo público</mark> é o conjunto de atribuições e responsabilidades previstas na estrutura organizacional que devem ser cometidas a um servidor. <mark>Cargos de provimento efetivo</mark> são os que integram carreira e para cujo provimento se exige aprovação em concurso público.</p>
+          <p><strong>Como a Quadrix cobra:</strong> "Servidor é pessoa física" - CERTO. "Cargo pode ser criado por decreto" - ERRADO, só por lei.</p>
+        </div>
+
+        <div class="artigo">
+          <div class="artigo-title">Art. 17 - Exercício</div>
+          <p>É de <mark>trinta dias o prazo</mark> para o servidor empossado em cargo público entrar em exercício, <mark>contados da data da posse</mark>, prorrogável por igual período, mediante requerimento do interessado apresentado até o término do prazo inicial.</p>
+        </div>
+
+        <div class="artigo">
+          <div class="artigo-title">Art. 41 - Estabilidade</div>
+          <p>O servidor habilitado em concurso público e empossado em cargo de provimento efetivo adquirirá estabilidade no serviço público <mark>ao completar 3 anos</mark> de efetivo exercício. §1º O servidor estável só perderá o cargo em virtude de <mark>sentença judicial transitada em julgado</mark> ou de <mark>processo administrativo disciplinar</mark> no qual lhe seja assegurada ampla defesa.</p>
+        </div>
+
+        <div class="artigo">
+          <div class="artigo-title">Art. 180 - Deveres do Servidor</div>
+          <p>São deveres do servidor: I - exercer com zelo e dedicação as atribuições do cargo; II - ser leal às instituições; III - observar normas legais e regulamentares; IV - cumprir ordens superiores, <mark>exceto quando manifestamente ilegais</mark>; V - atender com presteza; VI - levar ao conhecimento da autoridade irregularidades; VII - zelar pela economia do material; VIII - guardar sigilo; IX - manter conduta compatível com moralidade administrativa; X - ser assíduo e pontual; XI - tratar com urbanidade as pessoas; XII - representar contra ilegalidade.</p>
+        </div>
+
+        <div class="artigo">
+          <div class="artigo-title">Art. 187 - Proibições</div>
+          <p>É proibido: I - ausentar-se do serviço durante expediente sem autorização; II - retirar documento sem prévia anuência; III - recusar fé a documentos públicos; IV - opor resistência injustificada ao andamento de processo; V - promover manifestação de apreço no recinto; VI - cometer a pessoa estranha à repartição desempenho de atribuição; VII - coagir subordinados; VIII - manter sob chefia cônjuge/companheiro/parentes até 2º grau; IX - valer-se do cargo para lograr proveito; <mark>X - participar de gerência ou administração de sociedade privada</mark>, <mark>salvo em gozo de licença</mark>; XI - receber propina; XII - aceitar comissão; XIII - praticar usura; XIV - proceder de forma desidiosa; XV - utilizar pessoal/recursos em serviços particulares.</p>
+        </div>
+
+        <div class="artigo">
+          <div class="artigo-title">Arts. 198-203 - PENALIDADES EXPLICADAS</div>
+          <table>
+            <thead><tr><th>Penalidade</th><th>Hipóteses Art. 198-203</th><th>Prazo/Características</th><th>Prescrição</th></tr></thead>
+            <tbody>
+              <tr><td><mark>Advertência</mark></td><td>Descumprir deveres art. 180; violar proibições art. 187, I a VIII e XVI</td><td>Por escrito, cancelada após 3 anos sem nova falta</td><td>180 dias</td></tr>
+              <tr><td><mark>Suspensão</mark></td><td>Reincidência em falta punida com advertência; violar art. 187, IX a XVI</td><td><mark>Até 90 dias</mark>. Pode ser convertida em multa 50%</td><td>2 anos</td></tr>
+              <tr><td><mark>Demissão</mark></td><td>Crime contra adm; abandono cargo; incontinência; improbidade; revelação de segredo; lesão aos cofres; corrupção; acumulação ilegal</td><td>Incompatibiliza para nova investidura por 5 anos</td><td>5 anos</td></tr>
+              <tr><td><mark>Cassação Aposentadoria</mark></td><td>Se na ativa seria demitido</td><td>Retorna como servidor da ativa para processo</td><td>5 anos</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="artigo">
+          <div class="artigo-title">Art. 204 - Abandono de Cargo</div>
+          <p>Configura abandono de cargo a <mark>ausência intencional do servidor ao serviço por mais de trinta dias consecutivos</mark>. Art. 205: Inassiduidade habitual = falta ao serviço, sem causa justificada, por <mark>60 dias interpoladamente</mark>, durante 12 meses.</p>
+        </div>
+
+        <div class="mapa-mental">
+          <div class="mapa-central">REGIME DISCIPLINAR LC 840/2011</div>
+          <div class="mapa-ramos">
+            <div class="mapa-ramo"><strong>DEVERES Art.180</strong><br>Zelo, lealdade, sigilo, assiduidade, urbanidade</div>
+            <div class="mapa-ramo"><strong>PROIBIÇÕES Art.187</strong><br>Gerência empresa, propina, usura, desídia</div>
+            <div class="mapa-ramo"><strong>ADVERTÊNCIA</strong><br>180 dias prescrição<br>Deveres + proibiç I-VIII</div>
+            <div class="mapa-ramo"><strong>SUSPENSÃO 90d</strong><br>2 anos prescrição<br>Reincidência</div>
+            <div class="mapa-ramo"><strong>DEMISSÃO</strong><br>5 anos prescrição<br>Crimes, abandono</div>
+          </div>
+        </div>
+
+        <h3>ATRIBUIÇÕES CARGO 403 - ESPECIALISTA DIREITO E LEGISLAÇÃO</h3>
+        <div class="artigo">
+          <p>Conforme Edital retificado: <mark>I - Elaborar, analisar e interpretar atos normativos</mark>; <mark>II - Emitir pareceres jurídicos</mark> sobre matéria de competência da SEDES; <mark>III - Orientar gestores</mark> sobre aplicação da legislação; <mark>IV - Propor normas</mark> para aperfeiçoamento do SUAS; <mark>V - Representar judicial e extrajudicialmente</mark> mediante procuração; <mark>VI - Atuar em processos administrativos disciplinares</mark>; <mark>VII - Zelar pela legalidade dos atos</mark> da SEDES.</p>
+          <p><strong>Como a Quadrix cobra:</strong> "Compete ao cargo realizar visita domiciliar para concessão BPC" - ERRADO. "Pode emitir parecer sobre benefício eventual" - CERTO.</p>
+        </div>
+
+        <h3>Princípios Administrativos Art. 37 CF/88 - DECORE LIMPE</h3>
+        <div class="artigo">
+          <p><mark>L - Legalidade</mark>: Administração só faz o que a lei autoriza. <mark>I - Impessoalidade</mark>: Sem promoção pessoal, finalidade pública. <mark>M - Moralidade</mark>: Padrões éticos, boa-fé. <mark>P - Publicidade</mark>: Transparência, regra. <mark>E - Eficiência</mark>: Resultado, economicidade.</p>
+        </div>
+      </div>
+
+      <!-- 2º PRIORIDADE: CONSTITUCIONAL -->
+      <div class="card">
+        <div class="card-header">
+          <h2 class="card-title">2º PRIORIDADE - Direito Constitucional</h2>
+          <span class="badge badge-warning">Peso 20%</span>
+        </div>
+
+        <h3>Art. 5º - Direitos Fundamentais - TEXTO NA ÍNTEGRA DOS + COBRADOS</h3>
+        <div class="artigo">
+          <p><mark>Art. 5º, caput</mark>: Todos são iguais perante a lei, sem distinção de qualquer natureza, garantindo-se aos brasileiros e aos estrangeiros residentes no País a inviolabilidade do direito à vida, à liberdade, à igualdade, à segurança e à propriedade, nos termos seguintes:</p>
+          <p><mark>I - homens e mulheres são iguais em direitos e obrigações</mark>;</p>
+          <p><mark>II - ninguém será obrigado a fazer ou deixar de fazer alguma coisa senão em virtude de lei</mark> - Princípio da legalidade;</p>
+          <p><mark>X - são invioláveis a intimidade, a vida privada, a honra e a imagem</mark> das pessoas, assegurado o direito a indenização;</p>
+          <p><mark>XXXIII - todos têm direito a receber dos órgãos públicos informações de seu interesse particular</mark>, ou de interesse coletivo ou geral, que serão prestadas no prazo da lei, sob pena de responsabilidade, <mark>ressalvadas aquelas cujo sigilo seja imprescindível à segurança da sociedade e do Estado</mark>;</p>
+          <p><mark>LV - aos litigantes, em processo judicial ou administrativo, e aos acusados em geral são assegurados o contraditório e ampla defesa</mark>, com os meios e recursos a ela inerentes.</p>
+        </div>
+
+        <h3>Arts. 37-41 - Administração Pública - ESQUEMA</h3>
+        <div class="artigo">
+          <p><mark>Art. 37</mark>: Adm. direta e indireta - princípios LIMPE. Concurso público - regra. Prazo validade: <mark>até 2 anos, prorrogável 1x</mark>. <mark>Estabilidade: 3 anos</mark> efetivo exercício + avaliação especial.</p>
+          <p><mark>Art. 41</mark>: Estável só perde cargo por: <mark>1) sentença judicial transitada em julgado</mark>; <mark>2) PAD com ampla defesa</mark>; <mark>3) avaliação periódica de desempenho</mark> - lei complementar.</p>
+        </div>
+
+        <h3>Arts. 203-204 - Assistência Social Constitucional</h3>
+        <div class="artigo">
+          <p><mark>Art. 203</mark>: A assistência social será prestada a <mark>quem dela necessitar, independentemente de contribuição</mark> à seguridade social. Objetivos: <mark>I - proteção à família, maternidade, infância, adolescência e velhice</mark>; II - amparo às crianças carentes; III - integração ao mercado; IV - habilitação e reabilitação PcD; <mark>V - garantia de 1 salário mínimo mensal à PcD e idoso que comprovem não possuir meios</mark> de prover manutenção ou tê-la provida pela família.</p>
+          <p><mark>Art. 204</mark>: <mark>Descentralização político-administrativa</mark>, cabendo coordenação à esfera federal e execução pelos Estados, DF e Municípios. <mark>Participação da população</mark> via organizações representativas.</p>
+        </div>
+      </div>
+
+      <!-- 3º PRIORIDADE: LOAS + PNAS -->
+      <div class="card">
+        <div class="card-header">
+          <h2 class="card-title">3º PRIORIDADE - LOAS + PNAS + NOB/SUAS 2012 + TIPIFICAÇÃO</h2>
+          <span class="badge badge-accent">Peso 25%</span>
+        </div>
+
+        <div class="alert alert-info">
+          <strong>📊 Análise das 8 Provas:</strong> LOAS arts. 20-22 aparecem em 100% das provas. BPC é tema certo. CRAS/CREAS: diferenciação em 75%. Tipificação: PAIF/PAEFI em 87%.
+        </div>
+
+        <h3>LOAS - Lei 8.742/93 - ARTIGOS ESSENCIAIS NA ÍNTEGRA</h3>
+        <div class="artigo">
+          <div class="artigo-title">Art. 1º - Definição Completa</div>
+          <p>A assistência social, <mark>direito do cidadão e dever do Estado</mark>, é Política de Seguridade Social <mark>não contributiva</mark>, que provê os <mark>mínimos sociais</mark>, realizada através de conjunto integrado de ações de iniciativa pública e da sociedade, para garantir o atendimento às necessidades básicas.</p>
+        </div>
+
+        <div class="artigo">
+          <div class="artigo-title">Art. 2º - Objetivos</div>
+          <p>I - a <mark>proteção social</mark>, que visa à garantia da vida, à redução de danos e à prevenção de incidências de riscos, especialmente: a) a <mark>proteção à família, à maternidade, à infância, à adolescência e à velhice</mark>; b) o amparo às crianças e adolescentes carentes; c) a promoção da integração ao mercado de trabalho; d) a habilitação e reabilitação das PcD e a promoção de sua integração à vida comunitária; II - a <mark>vigilância socioassistencial</mark>; III - a <mark>defesa de direitos</mark>.</p>
+        </div>
+
+        <div class="artigo">
+          <div class="artigo-title">Art. 20 - BPC - BENEFÍCIO DE PRESTAÇÃO CONTINUADA - TEXTO COMPLETO</div>
+          <p>O benefício de prestação continuada é a garantia de <mark>1 salário-mínimo mensal</mark> à <mark>pessoa com deficiência e ao idoso com 65 anos ou mais</mark> que comprovem <mark>não possuir meios de prover a própria manutenção nem de tê-la provida por sua família</mark>.</p>
+          <p><mark>§1º</mark> Para efeito de concessão, considera-se: I - idoso: aquele com <mark>idade igual ou superior a 65 anos</mark>; II - pessoa com deficiência: aquela que tem <mark>impedimento de longo prazo</mark> de natureza física, mental, intelectual ou sensorial, o qual, em interação com uma ou mais barreiras, pode obstruir sua participação plena e efetiva na sociedade em igualdade de condições.</p>
+          <p><mark>§3º</mark> Considera-se incapaz de prover a manutenção da pessoa com deficiência ou idosa a família cuja <mark>renda mensal per capita seja inferior a 1/4 do salário-mínimo</mark>.</p>
+          <p><mark>§4º</mark> O benefício não pode ser acumulado com qualquer outro no âmbito da seguridade social ou de outro regime, <mark>salvo o da assistência médica e da pensão especial de natureza indenizatória</mark>.</p>
+          <p><strong>Como a Quadrix cobra:</strong> "BPC exige contribuição ao INSS" - ERRADO. "Renda: 1/4 SM per capita" - CERTO. "Idade: 60 anos" - ERRADO, é 65.</p>
+        </div>
+
+        <div class="artigo">
+          <div class="artigo-title">Art. 22 - Benefícios Eventuais</div>
+          <p>Entendem-se por benefícios eventuais as <mark>provisões suplementares e provisórias</mark> que integram organicamente as garantias do Suas e são prestadas aos cidadãos e às famílias em virtude de <mark>nascimento, morte, situações de vulnerabilidade temporária e de calamidade pública</mark>.</p>
+          <p><mark>§1º</mark> A concessão e o valor dos benefícios serão definidos pelos Estados, DF e Municípios e previstos nas respectivas leis orçamentárias anuais. <mark>§2º</mark> O CNAS, ouvidas as respectivas representações de Estados e Municípios, estabelecerá critérios e prazos.</p>
+        </div>
+
+        <h3>PNAS E NOB/SUAS 2012 - ESTRUTURA COMPLETA</h3>
+        <div class="mapa-mental">
+          <div class="mapa-central">ESTRUTURA DO SUAS</div>
+          <div class="mapa-ramos">
+            <div class="mapa-ramo"><strong>PROTEÇÃO SOCIAL BÁSICA</strong><br>CRAS<br>PAIF, SCFV<br>Prevenção</div>
+            <div class="mapa-ramo"><strong>PROTEÇÃO ESPECIAL MÉDIA</strong><br>CREAS<br>PAEFI, MSE, Abordagem<br>Direitos Violados</div>
+            <div class="mapa-ramo"><strong>PROTEÇÃO ESPECIAL ALTA</strong><br>Acolhimento<br>Casa-lar, República<br>Afastado da Família</div>
+          </div>
+        </div>
+
+        <h3>CRAS x CREAS - DIFERENÇAS QUE CAEM</h3>
+        <table>
+          <thead><tr><th>Aspecto</th><th>CRAS</th><th>CREAS</th></tr></thead>
+          <tbody>
+            <tr><td><mark>Nível Proteção</mark></td><td>Básica</td><td>Especial Média Complexidade</td></tr>
+            <tr><td><mark>Público</mark></td><td>Vulnerabilidade social</td><td>Direitos violados, risco pessoal/social</td></tr>
+            <tr><td><mark>Porta Entrada</mark></td><td>SIM - principal acesso ao SUAS</td><td>Encaminhamento, demanda específica</td></tr>
+            <tr><td><mark>Território</mark></td><td>Até 5.000 famílias referenciadas</td><td>Municipal/regional</td></tr>
+            <tr><td><mark>Serviço Principal</mark></td><td>PAIF - Atendimento Integral à Família</td><td>PAEFI - Atendimento Especializado Famílias/Indivíduos</td></tr>
+            <tr><td><mark>Equipe Mínima</mark></td><td>Coordenador, Assistente Social, Psicólogo</td><td>Coordenador, Ass. Social, Psicólogo, Advogado</td></tr>
+          </tbody>
+        </table>
+
+        <h3>TIPIFICAÇÃO NACIONAL - Resolução CNAS 109/2009 - SERVIÇOS</h3>
+        <div class="artigo">
+          <p><strong>BÁSICA:</strong> 1) PAIF; 2) SCFV - Serviço Convivência Fortalecimento Vínculos; 3) Serviço no Domicílio para PcD e idosos.</p>
+          <p><strong>MÉDIA:</strong> 1) PAEFI; 2) Serviço Especializado em Abordagem Social; 3) Serviço Proteção Adolescentes em Cumprimento MSE; 4) Serviço Especializado para Pessoas em Situação de Rua; 5) Serviço Proteção em Situações Calamidade.</p>
+          <p><strong>ALTA:</strong> 1) Acolhimento Institucional; 2) Casa-Lar; 3) República; 4) Família Acolhedora; 5) Serviço Proteção em Situações de Emergência.</p>
+        </div>
+      </div>
+
+      <!-- 4º PRIORIDADE: PROTEÇÕES ESPECÍFICAS -->
+      <div class="card">
+        <div class="card-header">
+          <h2 class="card-title">4º PRIORIDADE - ECA + Maria da Penha + Estatuto Idoso</h2>
+          <span class="badge badge-warning">Peso 15%</span>
+        </div>
+
+        <h3>ECA - Lei 8.069/90 - ARTIGOS + COBRADOS</h3>
+        <div class="artigo">
+          <p><mark>Art. 2º</mark>: Criança = até 12 anos incompletos. Adolescente = 12 a 18 anos.</p>
+          <p><mark>Art. 3º</mark>: Criança e adolescente gozam de todos os direitos fundamentais inerentes à pessoa humana, <mark>proteção integral</mark>.</p>
+          <p><mark>Art. 4º</mark>: É dever da família, comunidade, sociedade e poder público assegurar com <mark>absoluta prioridade</mark>: vida, saúde, alimentação, educação, lazer, profissionalização, cultura, dignidade, respeito, liberdade, convivência familiar e comunitária.</p>
+          <p><mark>Art. 131</mark>: Conselho Tutelar: órgão permanente e autônomo, não jurisdicional, encarregado de zelar pelo cumprimento dos direitos. <mark>5 membros</mark>, mandato 4 anos, recondução permitida.</p>
+          <p><mark>Art. 136</mark>: Atribuições CT: atender crianças/adolescentes; aplicar medidas arts. 101 e 129; encaminhar ao MP; requisitar serviços públicos; representar contra violação direitos.</p>
+        </div>
+
+        <h3>Lei Maria da Penha - 11.340/06 - FORMAS DE VIOLÊNCIA Art. 7º</h3>
+        <div class="artigo">
+          <p><mark>I - Física</mark>: ofenda integridade/saúde corporal.</p>
+          <p><mark>II - Psicológica</mark>: dano emocional, diminuição autoestima, controle, isolamento, vigilância, perseguição, insulto, chantagem, ridicularização, limitação direito ir e vir.</p>
+          <p><mark>III - Sexual</mark>: constranger a presenciar, manter ou participar de relação sexual não desejada; impedir uso de contraceptivo; forçar gravidez/aborto/prostituição.</p>
+          <p><mark>IV - Patrimonial</mark>: retenção, subtração, destruição de objetos, instrumentos de trabalho, documentos, bens, recursos econômicos.</p>
+          <p><mark>V - Moral</mark>: calúnia, difamação ou injúria.</p>
+        </div>
+
+        <div class="artigo">
+          <p><mark>Arts. 22-24 - Medidas Protetivas de Urgência</mark>: Afastamento do lar; proibição contato; suspensão visitas dependentes; prestação alimentos provisionais; restrição porte arma; comparecimento a programas; acompanhamento psicossocial.</p>
+        </div>
+
+        <h3>Estatuto do Idoso - Lei 10.741/03</h3>
+        <div class="artigo">
+          <p><mark>Art. 3º</mark>: É obrigação da família, comunidade, sociedade e Poder Público assegurar ao idoso, com <mark>absoluta prioridade</mark>, efetivação do direito à vida, saúde, alimentação, educação, cultura, esporte, lazer, trabalho, cidadania, liberdade, dignidade, respeito e convivência familiar e comunitária.</p>
+          <p><mark>§2º</mark>: Prioridade especial aos <mark>maiores de 80 anos</mark>.</p>
+          <p><mark>Art. 4º</mark>: Nenhum idoso será objeto de qualquer tipo de negligência, discriminação, violência, crueldade ou opressão.</p>
+        </div>
+      </div>
+
+      <!-- 5º PRIORIDADE: LGPD + LAI -->
+      <div class="card">
+        <div class="card-header">
+          <h2 class="card-title">5º PRIORIDADE - LGPD + LAI Aplicadas ao SUAS</h2>
+          <span class="badge badge-accent">Peso 10%</span>
+        </div>
+
+        <h3>LGPD - Lei 13.709/18 - APLICADA AO SUAS</h3>
+        <div class="artigo">
+          <p><mark>Art. 5º</mark>: Dado pessoal: informação relacionada a pessoa natural identificada ou identificável. <mark>Dado sensível</mark>: origem racial, convicção religiosa, política, filiação a sindicato, dado genético, biométrico, <mark>saúde</mark>, vida sexual.</p>
+          <p><mark>Art. 7º - Bases Legais</mark>: I - consentimento; <mark>II - cumprimento de obrigação legal</mark>; <mark>III - execução de políticas públicas</mark>; IV - estudos por órgão de pesquisa; <mark>V - proteção da vida</mark>; VI - tutela da saúde; <mark>VII - exercício regular de direitos</mark> em processo; VIII - proteção do crédito.</p>
+          <p><mark>Art. 11 - Dados Sensíveis</mark>: Tratamento só quando: <mark>a) consentimento específico</mark>; <mark>b) cumprimento de obrigação legal</mark> pelo controlador; <mark>c) políticas públicas</mark>; <mark>d) estudos</mark>; <mark>e) proteção da vida</mark>; <mark>f) tutela saúde</mark>; <mark>g) exercício direitos</mark>.</p>
+          <p><strong>Caso Quadrix CadÚnico:</strong> MP solicita dados. Base legal: Art. 7º, II e III + Art. 11, II, "a" e "b". MP tem prerrogativa requisitória CF art. 129, VI. Dever fornecer <mark>dados mínimos necessários</mark> - princípio necessidade art. 6º, III.</p>
+        </div>
+
+        <h3>LAI - Lei 12.527/11</h3>
+        <div class="artigo">
+          <p><mark>Art. 10</mark>: Qualquer interessado pode apresentar pedido de acesso. <mark>Art. 11</mark>: Prazo: <mark>20 dias</mark>, prorrogável por 10 dias mediante justificativa. <mark>Art. 31</mark>: Tratamento de informações pessoais deve ser feito de forma <mark>transparente e com respeito à intimidade, vida privada, honra e imagem</mark>, bem como às liberdades e garantias individuais.</p>
+          <p><strong>SIGILO SUAS:</strong> Resolução CNAS 33/2011: Prontuário SUAS é sigiloso. Acesso restrito aos profissionais SUAS. Compartilhamento só com base legal ou ordem judicial.</p>
+        </div>
+      </div>
+
+      <!-- 6º, 7º, 8º PRIORIDADES RESUMIDAS -->
+      <div class="card">
+        <div class="card-header">
+          <h2 class="card-title">6º, 7º e 8º - Legislações DF + Português + Primeiros Socorros</h2>
+          <span class="badge badge-primary">Peso 10% Total</span>
+        </div>
+
+        <h3>Legislações DF Essenciais</h3>
+        <div class="checkbox-wrapper">
+          <input type="checkbox" id="m1-df1" data-module="m1">
+          <label for="m1-df1"><strong>LODF Arts. 19-28</strong>: Princípios adm pública DF - <mark>legalidade, impessoalidade, moralidade, publicidade, eficiência</mark>. Art. 19, §8º: Vedado nepotismo.</label>
+        </div>
+        <div class="checkbox-wrapper">
+          <input type="checkbox" id="m1-df2" data-module="m1">
+          <label for="m1-df2"><strong>RIDE LC 94/98</strong>: Municípios GO: Abadiânia, Água Fria, Águas Lindas, Alexânia, Cabeceiras, Cidade Ocidental, Cocalzinho, Corumbá, Cristalina, Formosa, Luziânia, Mimoso, Novo Gama, Padre Bernardo, Pirenópolis, Planaltina, Santo Antônio do Descoberto, Valparaíso, Vila Boa. MG: Unaí, Buritis, Cabeceira Grande.</label>
+        </div>
+        <div class="checkbox-wrapper">
+          <input type="checkbox" id="m1-df3" data-module="m1">
+          <label for="m1-df3"><strong>Lei 7.484/2024</strong> - Violência Institucional: Veda condutas de agentes públicos que causem dano à mulher vítima de violência nos serviços. Conceito: <mark>ação/omissão que cause dano</mark> por meio de constrangimento, revitimização, culpabilização.</label>
+        </div>
+        <div class="checkbox-wrapper">
+          <input type="checkbox" id="m1-df4" data-module="m1">
+          <label for="m1-df4"><strong>Cartão Prato Cheio Lei 6.938/21</strong>: <mark>R$ 250</mark> até 4 membros; <mark>R$ 350</mark> para 5+. <strong>DF Social Lei 7.371/23</strong>: Transferência renda famílias vulneráveis CadÚnico.</label>
+        </div>
+
+        <h3>Português - Pontos Quadrix</h3>
+        <div class="artigo">
+          <p><strong>Interpretação:</strong> Inferência = informação implícita. Pressuposto = informação anterior verdadeira. Subentendido = insinuado.</p>
+          <p><strong>Crase:</strong> Fusão a+a. REGRA: Troque palavra feminina por masculina. Se virar "ao", crase. "Vou à escola" → "Vou ao colégio" = CRÁSE. "Vou a Paris" → "Vou a Roma" = SEM CRASE.</p>
+          <p><strong>Concordância:</strong> "Haja vista" = invariável. "Vistas" = variável. "Anexos" = adjetivo, varia. "Em anexo" = advérbio, não varia.</p>
+        </div>
+
+        <h3>Primeiros Socorros - Lei 14.621/23 Lei Lucas</h3>
+        <div class="artigo">
+          <p>Obrigatória capacitação em noções básicas de primeiros socorros de <mark>professores e funcionários da educação básica</mark>. Conteúdo: <mark>identificação de emergências, acionamento serviço emergência, procedimentos básicos</mark>: OVACE - desengasgo, parada cardiorrespiratória, hemorragias, queimaduras, convulsões.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ABA LEI SECA GRIFADA TOP 120 -->
+    <section id="leiseca" class="tab-content">
+      <div class="alert alert-info">
+        <strong>📖 LEI SECA GRIFADA - TOP 120 ARTIGOS:</strong> Texto atualizado em 06/2026. <mark>Grifado em amarelo</mark> = pontos que a Quadrix mais cobra. Marque "Decorado" nos que já memorizou.
+      </div>
+
+      <div class="card">
+        <div class="lei-seca-filters">
+          <button class="filter-btn active" data-filter="todos">Todos 120</button>
+          <button class="filter-btn" data-filter="cf">CF/88 (25)</button>
+          <button class="filter-btn" data-filter="loas">LOAS (15)</button>
+          <button class="filter-btn" data-filter="eca">ECA (15)</button>
+          <button class="filter-btn" data-filter="lc840">LC 840 (20)</button>
+          <button class="filter-btn" data-filter="lodf">LODF (15)</button>
+          <button class="filter-btn" data-filter="mp">Maria da Penha (10)</button>
+          <button class="filter-btn" data-filter="lgpd">LGPD (10)</button>
+          <button class="filter-btn" data-filter="lai">LAI (5)</button>
+          <button class="filter-btn" data-filter="idoso">Est. Idoso (5)</button>
+          <button class="filter-btn" data-filter="decorados">✅ Decorados</button>
+        </div>
+
+        <input type="text" id="leisecaSearch" placeholder="Buscar artigo na lei seca..." style="width: 100%; padding: 0.75rem; border: 2px solid var(--border); border-radius: 8px; background: var(--bg-alt); color: var(--text); margin-bottom: 1rem;">
+
+        <div id="leisecaContainer"></div>
+      </div>
+    </section>
+
+    <!-- ABA QUESTÕES 100 -->
+    <section id="questoes" class="tab-content">
+      <div class="alert alert-info">
+        <strong>📊 100 QUESTÕES QUADRIX:</strong> 30 Gerais + 70 Específicos. Todas comentadas com base legal. Incidência: LC 840 (18q), CF arts 37-41 (15q), LOAS/BPC (22q), ECA (9q), LGPD SUAS (7q), Atribuições cargo 403 (10q), Casos SUAS (19q).
+      </div>
+      <div id="questionsContainer"></div>
+    </section>
+
+    <!-- ABA SIMULADO COMPLETO -->
+    <section id="simulado" class="tab-content">
+      <div id="simuladoIntro" class="card">
+        <div class="card-header">
+          <h2 class="card-title">🎯 Simulado Completo SEDES-DF Cargo 403</h2>
+          <span class="badge badge-danger">Formato Oficial Edital</span>
+        </div>
+
+        <div class="alert alert-danger">
+          <strong>⚠️ ATENÇÃO - CONDIÇÕES REAIS DE PROVA:</strong><br>
+          • <strong>Duração:</strong> 4 horas (240 minutos) improrrogáveis<br>
+          • <strong>Composição:</strong> 60 objetivas (20 Gerais peso 1 + 40 Específicos peso 2) + 1 Estudo de Caso<br>
+          • <strong>Eliminação:</strong> Menos de 10 acertos em Gerais OU menos de 40 acertos em Específicos<br>
+          • <strong>Discursiva:</strong> Apenas 1.380 melhores classificados terão corrigida<br>
+          • <strong>Bloqueio:</strong> Ao iniciar, outras abas serão bloqueadas até finalizar
+        </div>
+
+        <h3>Estrutura da Prova</h3>
+        <table>
+          <thead><tr><th>Módulo</th><th>Disciplina</th><th>Questões</th><th>Peso</th><th>Pontos Máx</th></tr></thead>
+          <tbody>
+            <tr><td rowspan="5"><strong>Gerais</strong></td><td>Português</td><td>8</td><td>1</td><td>8</td></tr>
+            <tr><td>Conhecimentos DF</td><td>4</td><td>1</td><td>4</td></tr>
+            <tr><td>LC 840/2011</td><td>3</td><td>1</td><td>3</td></tr>
+            <tr><td>Maria da Penha</td><td>3</td><td>1</td><td>3</td></tr>
+            <tr><td>Primeiros Socorros</td><td>2</td><td>1</td><td>2</td></tr>
+            <tr><td colspan="3"><strong>Subtotal Gerais</strong></td><td></td><td><strong>20 pts</strong></td></tr>
+            <tr><td rowspan="7"><strong>Específicos</strong></td><td>Dir. Constitucional</td><td>6</td><td>2</td><td>12</td></tr>
+            <tr><td>Dir. Administrativo</td><td>8</td><td>2</td><td>16</td></tr>
+            <tr><td>LOAS/SUAS</td><td>8</td><td>2</td><td>16</td></tr>
+            <tr><td>ECA/Idoso/PcD</td><td>6</td><td>2</td><td>12</td></tr>
+            <tr><td>LGPD/LAI</td><td>4</td><td>2</td><td>8</td></tr>
+            <tr><td>Legislação DF</td><td>4</td><td>2</td><td>8</td></tr>
+            <tr><td>Dir. Civil/Proc Civil</td><td>4</td><td>2</td><td>8</td></tr>
+            <tr><td colspan="3"><strong>Subtotal Específicos</strong></td><td></td><td><strong>80 pts</strong></td></tr>
+            <tr><td colspan="3"><strong>Discursiva</strong></td><td></td><td><strong>60 pts</strong></td></tr>
+            <tr style="background: rgba(13, 71, 161, 0.1);"><td colspan="4"><strong>TOTAL</strong></td><td><strong>160 pts</strong></td></tr>
+          </tbody>
+        </table>
+
+        <div class="alert alert-warning">
+          <strong>📝 Instruções Discursiva:</strong> Estudo de caso 20-30 linhas, critérios: CAC 70% (42 pts), OT 15% (9 pts), DLP 15% (9 pts). Mínimo 10 linhas. Fugir tema zera.
+        </div>
+
+        <button class="btn btn-danger" id="startSimulado" style="width: 100%; padding: 1rem; font-size: 1.125rem; margin-top: 1rem;" onclick="window.startSimulado()">🚀 INICIAR SIMULADO - 4 HORAS</button>
+      </div>
+
+      <div id="simuladoProva" class="hidden">
+        <div class="simulado-header">
+          <div>
+            <span class="badge badge-danger">MODO PROVA ATIVO</span>
+            <span id="questaoAtual">Questão 1 / 60</span>
+          </div>
+          <div class="timer-display" id="timerDisplay">04:00:00</div>
+          <div>
+            <button class="btn btn-primary" id="markReview">⭐ Marcar Revisão</button>
+            <button class="btn btn-danger" id="finishSimulado">Finalizar Prova</button>
+          </div>
+        </div>
+
+        <div class="card">
+          <h3>Cartão-Resposta</h3>
+          <div class="cartao-resposta" id="cartaoResposta"></div>
+        </div>
+
+        <div id="simuladoQuestoesContainer"></div>
+
+        <div class="card" id="discursivaSimuladoCard">
+          <div class="card-header">
+            <h3 class="card-title">📝 Prova Discursiva - Estudo de Caso</h3>
+            <span class="badge badge-danger">20-30 linhas | 60 pontos</span>
+          </div>
+          <div class="discursiva-container">
+            <div class="alert alert-info" id="enunciadoDiscursiva"></div>
+            <textarea class="discursiva-textarea" id="respostaDiscursiva" placeholder="Digite sua resposta aqui..."></textarea>
+            <div style="display: flex; justify-content: space-between; margin-top: 0.5rem;">
+              <span>Linhas: <span id="lineCount">0</span> / 30</span>
+              <span>Caracteres: <span id="charCount">0</span></span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="simuladoResultado" class="hidden"></div>
+    </section>
+
+    <!-- ABA CRONOGRAMA 5H/DIA -->
+    <section id="cronograma" class="tab-content">
+      <div class="card">
+        <div class="card-header">
+          <h2 class="card-title">Cronograma 5h/dia - 09/06/2026 a 06/09/2026</h2>
+          <span class="badge badge-success">89 dias | 35h/semana | 445h totais</span>
+        </div>
+        
+        <div class="alert alert-danger">
+          <strong>🎯 META DIÁRIA 5H:</strong> 2h Teoria + 2h Questões + 1h Discursiva. Total: 445h. Prova em 07/09/2026.
+        </div>
+
+        <div class="chart-container">
+          <h4>Distribuição das 445h por Fase - Percentual EDITAL</h4>
+          <div class="chart-bar">
+            <div class="chart-label">Fase 1 - Base 40%</div>
+            <div class="chart-bar-wrapper"><div class="chart-bar-fill" style="width: 40%">178h | 09/06-25/07 (47 dias)</div></div>
+          </div>
+          <div class="chart-bar">
+            <div class="chart-label">Fase 2 - Aprofund. 25%</div>
+            <div class="chart-bar-wrapper"><div class="chart-bar-fill" style="width: 25%">111h | 26/07-05/08 (11 dias)</div></div>
+          </div>
+          <div class="chart-bar">
+            <div class="chart-label">Fase 3 - Revisão 25%</div>
+            <div class="chart-bar-wrapper"><div class="chart-bar-fill" style="width: 25%">111h | 06/08-20/08 (15 dias)</div></div>
+          </div>
+          <div class="chart-bar">
+            <div class="chart-label">Fase 4 - Reta Final 10%</div>
+            <div class="chart-bar-wrapper"><div class="chart-bar-fill" style="width: 10%">45h | 21/08-06/09 (17 dias)</div></div>
+          </div>
+        </div>
+
+        <h3>TIMELINE 5H/DIA DETALHADA</h3>
+        <div class="timeline">
+          <div class="timeline-item">
+            <div class="timeline-date">FASE 1: BASE 40% - 178h | 09/06 a 25/07/2026 | 47 dias</div>
+            <h4>Lei Seca + Fundamentos | 5h/dia = 35h/semana</h4>
+            <ul class="checklist">
+              <li><strong>Semanas 1-3 (09-29/06 | 105h):</strong> LC 840/2011 arts 1-100 + 180-208 COMPLETOS. Dir. Adm: Atos, Poderes, PAD. CF arts 5º, 37-41 na íntegra. 2h teoria lei seca + 2h 60 questões LC 840/CF + 1h resumo/mapa</li>
+              <li><strong>Semanas 4-5 (30/06-13/07 | 70h):</strong> LOAS arts 1-22 COMPLETOS + PNAS + NOB/SUAS 2012. CRAS/CREAS diferenças. 100 questões BPC/PAIF/PAEFI.</li>
+              <li><strong>Semana 6-7 (14-25/07 | 3h restantes):</strong> ECA arts 1-18, 86-97, 131-137 + Lei Maria da Penha arts 5º-7º, 22-24 + Est. Idoso arts 3º-4º. 80 questões.</li>
+              <li><strong>Meta Fase 1:</strong> 400 questões resolvidas. 60 artigos decorados. 12 discursivas tema LC 840 e LOAS.</li>
+            </ul>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-date">FASE 2: APROFUNDAMENTO 25% - 111h | 26/07 a 05/08/2026 | 11 dias</div>
+            <h4>SUAS + Proteções Específicas + LGPD | 5h/dia</h4>
+            <ul class="checklist">
+              <li><strong>Semana 8 (26/07-01/08 | 35h):</strong> Tipificação Nacional Resolução 109/2009 - todos os serviços. Estatuto PcD Lei 13.146/15. Decreto Pop Rua 7.053/09. 2h teoria + 2h 60 questões + 1h discursiva caso SUAS</li>
+              <li><strong>Semana 9 (02-05/08 | 20h):</strong> LGPD aplicada CadÚnico + LAI + Sigilo Prontuário SUAS Res. CNAS 33/11. Decreto 6.135/07 CadÚnico. 80 questões LGPD/Benefícios.</li>
+              <li><strong>Semana 10-11 (parcial | 56h):</strong> Legislações DF: LODF arts 19-28, RIDE LC 94/98, Lei 7.484/24, Cartão Prato Cheio, DF Social. Dir. Civil: Família, Capacidade. Dir. Financeiro: Lei 4.320/64, LRF.</li>
+              <li><strong>Meta Fase 2:</strong> 300 questões. 40 artigos decorados. 10 discursivas LGPD + SUAS.</li>
+            </ul>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-date">FASE 3: REVISÃO 25% - 111h | 06/08 a 20/08/2026 | 15 dias</div>
+            <h4>Revisão por Questões + Discursiva Intensiva | 5h/dia</h4>
+            <ul class="checklist">
+              <li><strong>Semanas 12-13 (06-20/08 | 75h):</strong> Revisão ativa: 80 questões/dia = 1200 questões. Rotação: Dia 1: LC 840, Dia 2: CF, Dia 3: LOAS, Dia 4: ECA/MP/Idoso, Dia 5: LGPD/LAI, Dia 6: Simulado parcial, Dia 7: Discursiva.</li>
+              <li><strong>Semana 14 (parcial | 36h):</strong> Foco nos erros. Releitura Top 120 artigos. 2 discursivas por dia = 14 total. Mapas mentais de tudo.</li>
+              <li><strong>Estrutura 5h:</strong> 1h Revisão lei seca artigos-chave + 3h Bloco 80 questões com gabarito comentado + 1h Elaborar 1 discursiva OU revisar 2 anteriores.</li>
+              <li><strong>Meta Fase 3:</strong> 1200 questões. 120 artigos revisados 3x. 20 discursivas totais.</li>
+            </ul>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-date">FASE 4: RETA FINAL 10% - 45h | 21/08 a 06/09/2026 | 17 dias</div>
+            <h4>Simulados + Manutenção | 5h/dia exceto véspera</h4>
+            <ul class="checklist">
+              <li><strong>21-31/08 (11 dias | 55h ajustado):</strong> 1 Simulado completo 4h a cada 2 dias = 5 simulados. Nos dias sem simulado: 100 questões dos temas que errou. 2h revisão ativa + 2h questões + 1h discursiva</li>
+              <li><strong>01-05/09 (5 dias | 25h):</strong> Revisão relâmpago Top 120. Leitura dinâmica lei seca. 50 questões/dia. Manutenção do ritmo, sem conteúdo novo.</li>
+              <li><strong>06/09 Véspera (3h):</strong> Apenas leitura CF art. 5º, 37, 203-204 + LC 840 arts 180, 187, 198-203 + LOAS art. 20. Descanso mental. Hidrat e alimentação leve.</li>
+              <li><strong>07/09 PROVA:</strong> Chegada 1h antes. Confiança. Você estudou 445h.</li>
+            </ul>
+          </div>
+        </div>
+
+        <h3>ROTINA DIÁRIA FIXA 5H - SUSTENTÁVEL</h3>
+        <div class="alert alert-success">
+          <strong>⏰ Sugestão Blocos:</strong> Manhã: 2h Teoria | Tarde: 2h Questões | Noite: 1h Discursiva. Ou adapte ao seu horário. IMPORTANTE: Não pule dias.
+        </div>
+        <div class="checkbox-wrapper">
+          <input type="checkbox" id="cron1">
+          <label for="cron1"><strong>BLOCO 1 - 2h TEORIA:</strong> Leitura lei seca artigo por artigo + resumo/mapa mental. LC 840: 1 artigo aprof./dia. CF: 2 artigos/dia. LOAS: 1 artigo/dia.</label>
+        </div>
+        <div class="checkbox-wrapper">
+          <input type="checkbox" id="cron2">
+          <label for="cron2"><strong>BLOCO 2 - 2h QUESTÕES:</strong> Mínimo 60 questões/dia do tema estudado. Cronometrar. Corrigir TODAS com gabarito comentado. Anotar erros em caderno.</label>
+        </div>
+        <div class="checkbox-wrapper">
+          <input type="checkbox" id="cron3">
+          <label for="cron3"><strong>BLOCO 3 - 1h DISCURSIVA:</strong> Seg/Qua/Sex: Elaborar 1 nova. Ter/Qui/Sáb: Revisar 2 anteriores com espelho. Dom: Descanso OU simulado parcial.</label>
+        </div>
+        <div class="checkbox-wrapper">
+          <input type="checkbox" id="cron4">
+          <label for="cron4"><strong>DOMINGO:</strong> Revisão semanal 100 questões mistas 4h + Planejamento próxima semana 1h. TOTAL 35h/semana.</label>
+        </div>
+        <div class="checkbox-wrapper">
+          <input type="checkbox" id="cron5">
+          <label for="cron5"><strong>METAS SEMANAIS:</strong> 420 questões resolvidas | 7 discursivas | 10 artigos decorados | 100% checklists marcados</label>
+        </div>
+      </div>
+    </section>
+
+    <!-- ABA DISCURSIVA -->
+    <section id="discursiva" class="tab-content">
+      <div class="card">
+        <div class="card-header">
+          <h2 class="card-title">Prova Discursiva - Critérios Quadrix Detalhados</h2>
+          <span class="badge badge-primary">60 pontos | CAC 70% + OT 15% + DLP 15%</span>
+        </div>
+
+        <div class="alert alert-danger">
+          <strong>📋 DISTRIBUIÇÃO DOS 60 PONTOS:</strong><br>
+          <strong>CAC - Conhecimento Aplicado ao Cargo (42 pontos):</strong> Direito + Legislação + Capacidade Jurídica. 70% da nota.<br>
+          <strong>OT - Ortografia e Texto (9 pontos):</strong> Até 3 erros leves = nota máxima. 4-6 erros = 6pts. 7+ erros = 3pts.<br>
+          <strong>DLP - Domínio Língua Portuguesa (9 pontos):</strong> Coesão, coerência, gramática, vocabulário jurídico.
+        </div>
+
+        <h3>ESTRUTURA OBRIGATÓRIA DO ESTUDO DE CASO</h3>
+        <ol>
+          <li><strong>INTRODUÇÃO (6 pontos CAC):</strong> 3-4 linhas. Identifique o caso, a área do Direito, os institutos envolvidos. Ex: "Trata-se de análise jurídica sobre negativa de benefício eventual do SUAS, envolvendo LOAS, Direito Administrativo e princípios constitucionais."</li>
+          <li><strong>DESENVOLVIMENTO (30 pontos CAC):</strong> 20-24 linhas. 3 parágrafos:
+            <ul>
+              <li><strong>Parágrafo 1 - Fundamentação Legal:</strong> Cite MÍNIMO 3 dispositivos com artigo, caput, inciso, lei. Ex: "Nos termos do art. 22 da Lei 8.742/93..."</li>
+              <li><strong>Parágrafo 2 - Aplicação ao Caso:</strong> Subsuma fatos à norma. "No caso concreto, a negativa sob alegação de recebimento de Bolsa Família viola o art. 9º do Decreto 6.307/07, que veda condicionar..."</li>
+              <li><strong>Parágrafo 3 - Jurisprudência/Princípios:</strong> "Consoante Parecer CONJUR/MDS 12/2020 e princípio da legalidade art. 37 CF..."</li>
+            </ul>
+          </li>
+          <li><strong>CONCLUSÃO (6 pontos CAC):</strong> 3-4 linhas. Parecer objetivo: "Opina-se pela ilegalidade da negativa. Orientação: deferir benefício se comprovada vulnerabilidade, capacitar equipe, registrar no Prontuário SUAS com base no art. X."</li>
+        </ol>
+
+        <h3>TEMA 1: PARECER BENEFÍCIO EVENTUAL - MODELO 60/60</h3>
+        <div class="artigo">
+          <div class="artigo-title">Situação-Problema Completa</div>
+          <p>Usuária genitora de recém-nascido, inscrita no CadÚnico, residente em Samambaia-DF, solicita no CRAS auxílio-natalidade. Técnico nega sob argumento verbal de que ela já recebe Bolsa Família e que "não pode acumular benefícios". Não há parecer escrito. Usuária procura a SEDES questionando. Elabore parecer jurídico analisando: 1) Legalidade da negativa; 2) Fundamentos para concessão; 3) Orientações ao CRAS.</p>
+        </div>
+        <div class="artigo" style="background: rgba(46, 125, 50, 0.05);">
+          <div class="artigo-title">ESPELHO PADRÃO 60 PONTOS</div>
+          <p><strong>[INTRODUÇÃO - 4 linhas]</strong> Cuida-se de análise jurídico-administrativa acerca de negativa de benefício eventual auxílio-natalidade no âmbito do Sistema Único de Assistência Social - SUAS. A questão envolve aplicação da Lei Orgânica da Assistência Social - LOAS, normas regulamentadoras e princípios da Administração Pública, demandando parecer sobre legalidade do ato e orientações técnicas.</p>
+          <p><strong>[DESENVOLVIMENTO §1 - Fundamentação - 8 linhas]</strong> Nos termos do art. 22 da Lei nº 8.742/1993 - LOAS, os benefícios eventuais são provisões suplementares e provisórias prestadas em virtude de nascimento, morte, vulnerabilidade temporária e calamidade pública. O Decreto nº 6.307/2007, art. 9º, veda expressamente condicionar a concessão de benefício eventual à vedação de concessão de outros benefícios. Ademais, a Lei nº 14.601/2023, que institui o Programa Bolsa Família, não estabelece incompatibilidade com benefícios eventuais do SUAS, conforme Parecer CONJUR/MDS nº 12/2020.</p>
+          <p><strong>[DESENVOLVIMENTO §2 - Aplicação - 8 linhas]</strong> No caso, a negativa fundamentada exclusivamente no recebimento de Bolsa Família contraria a legislação. A usuária comprovou nascimento de filho, fato gerador do auxílio-natalidade, e encontra-se inscrita no CadÚnico, presumindo-se vulnerabilidade. A ausência de parecer escrito viola o art. 50 da Lei nº 9.784/99, que exige motivação dos atos administrativos. A conduta do técnico configura ainda violação ao dever de urbanidade art. 180, XI, LC 840/2011.</p>
+          <p><strong>[DESENVOLVIMENTO §3 - Princípios - 4 linhas]</strong> A negativa ofende os princípios da legalidade e motivação art. 37 CF/88, bem como o princípio da proteção social art. 2º LOAS. O SUAS, política não contributiva art. 203 CF, deve garantir mínimos sociais, não podendo criar óbices não previstos em lei.</p>
+          <p><strong>[CONCLUSÃO - 4 linhas]</strong> Ante o exposto, opina-se pela ilegalidade da negativa. Orienta-se: 1) Deferir o benefício se comprovada vulnerabilidade, nos termos do art. 22 LOAS; 2) Capacitar equipe sobre vedações do Decreto 6.307/07; 3) Emitir parecer escrito motivado em todos os casos, registrando no Prontuário SUAS conforme Resolução CNAS 33/2011; 4) Cientificar a usuária do direito de recurso.</p>
+        </div>
+
+        <h3>TEMA 2: LGPD + CADÚNICO + MP - MODELO 60/60</h3>
+        <div class="artigo">
+          <div class="artigo-title">Situação-Problema</div>
+          <p>O Ministério Público do DF solicita à SEDES, via ofício, relação completa de 10.000 famílias cadastradas no CadÚnico em Ceilândia, contendo: nome, CPF, endereço, renda per capita, composição familiar e NIS, para instruir Inquérito Civil nº 123/2026 que investiga irregularidades em programa habitacional. Solicita em 5 dias. Analise: 1) Possibilidade jurídica de compartilhamento; 2) Base legal LGPD; 3) Limites e cautelas; 4) Orientação à SEDES.</p>
+        </div>
+        <div class="artigo" style="background: rgba(46, 125, 50, 0.05);">
+          <div class="artigo-title">ESPELHO PADRÃO 60 PONTOS</div>
+          <p><strong>[INTRODUÇÃO]</strong> Trata-se de requisição ministerial de dados pessoais e sensíveis constantes do Cadastro Único - CadÚnico, exigindo análise sob a Lei Geral de Proteção de Dados - LGPD, normativas do SUAS e prerrogativas do Ministério Público, com vistas a orientar a SEDES sobre compartilhamento seguro e legal.</p>
+          <p><strong>[DESENVOLVIMENTO §1 - Fundamentação]</strong> A LGPD, Lei 13.709/18, art. 7º, II e III, autoriza tratamento de dados para cumprimento de obrigação legal e execução de políticas públicas. Art. 11, II, "a" e "b", permite dados sensíveis para obrigação legal e políticas públicas. O Decreto 6.135/07, art. 8º, estabelece sigilo dos dados CadÚnico, ressalvado compartilhamento mediante requisição judicial ou do MP para investigação. A LC 75/93, art. 129, VI CF/88, confere ao MP poder requisitório.</p>
+          <p><strong>[DESENVOLVIMENTO §2 - Aplicação]</strong> O MP detém prerrogativa de requisitar informações para inquérito civil. Contudo, o art. 6º, III LGPD impõe princípio da necessidade: tratamento limitado ao mínimo necessário. Assim, deve-se fornecer apenas dados essenciais à investigação, não a totalidade. Ademais, art. 18, V LGPD assegura direito de comunicação ao titular, salvo se prejudicar investigação - analisar caso a caso. Resolução CNAS 33/2011 exige registro do compartilhamento no Prontuário SUAS.</p>
+          <p><strong>[DESENVOLVIMENTO §3 - Cautelas]</strong> Recomenda-se: termo de compromisso de sigilo do MP; anonimização de dados não essenciais; fornecimento via canal seguro criptografado; registro da transmissão. Inobservância gera responsabilidade civil art. 42 LGPD e administrativa LC 840/11 art. 180, VIII.</p>
+          <p><strong>[CONCLUSÃO]</strong> Opina-se pelo deferimento parcial da requisição: fornecer CPF, NIS, renda e composição apenas das famílias diretamente vinculadas ao objeto do IC 123/2026, excluindo endereço completo e dados excessivos. Celebrar termo de sigilo. Registrar no sistema. Comunicar ao MP o prazo de 5 dias. Ressalvar que dados sensíveis exigem anonimização quando possível.</p>
+        </div>
+
+        <h3>TEMA 3: VIOLÊNCIA DOMÉSTICA + CRAS/CREAS - MODELO 60/60</h3>
+        <div class="artigo">
+          <div class="artigo-title">Situação-Problema</div>
+          <p>Maria, 28 anos, atendida no CREAS, relata violência psicológica e patrimonial do companheiro: controla salário, proíbe visitas, retém documentos. Tem 2 filhos menores, sem renda própria, teme sair de casa. Solicita orientação sobre medidas protetivas, alimentos, benefícios. Elabore orientação técnica-jurídica completa.</p>
+        </div>
+        <div class="artigo" style="background: rgba(46, 125, 50, 0.05);">
+          <div class="artigo-title">ESPELHO PADRÃO 60 PONTOS</div>
+          <p><strong>[INTRODUÇÃO]</strong> O caso configura violência doméstica e familiar contra a mulher, nos termos da Lei Maria da Penha, demandando atuação intersetorial do SUAS, Sistema de Justiça e políticas públicas, com orientação jurídica sobre medidas protetivas, direitos socioassistenciais e trabalhistas.</p>
+          <p><strong>[DESENVOLVIMENTO §1 - Fundamentação Violência]</strong> Configurada violência psicológica art. 7º, II e patrimonial art. 7º, IV Lei 11.340/06: controle salarial, proibição de visitas, retenção de documentos. Lei 7.484/24 DF veda violência institucional no atendimento. Art. 203 CF e art. 2º LOAS garantem proteção à mulher em vulnerabilidade.</p>
+          <p><strong>[DESENVOLVIMENTO §2 - Medidas Protetivas]</strong> Nos termos do art. 22 Lei 11.340/06, cabem MPU: I - afastamento do lar do agressor; II - proibição contato com ofendida e filhos; III - suspensão visitas; V - prestação de alimentos provisionais. Art. 9º: assistência judiciária, acesso a Defensoria Pública, inclusão em programas sociais. CLT art. 391-A: estabilidade gestante. Lei 11.340 art. 9º, §2º, II: manutenção vínculo trabalhista por até 6 meses.</p>
+          <p><strong>[DESENVOLVIMENTO §3 - Benefícios SUAS]</strong> Encaminhar ao CRAS para: inclusão CadÚnico Decreto 6.135/07; Bolsa Família Lei 14.601/23; Cartão Prato Cheio Lei DF 6.938/21 R$ 350,00; benefício eventual aluguel social art. 22 LOAS por vulnerabilidade temporária. Acompanhamento PAEFI no CREAS.</p>
+          <p><strong>[CONCLUSÃO]</strong> Orienta-se: 1) Acionar DEAM para registro BO e requerer MPU imediatas; 2) Encaminhar à Defensoria para alimentos e guarda; 3) Cadastrar CadÚnico e requerer benefícios; 4) Incluir em PAEFI; 5) Articular rede: saúde mental, trabalho; 6) Garantir sigilo art. 7º LGPD e Res. CNAS 33/11. 7) Evitar revitimização Lei 7.484/24.</p>
+        </div>
+
+        <h3>DICAS PARA NOTA MÁXIMA - CAC/OT/DLP</h3>
+        <ul class="checklist">
+          <li><strong>CAC 42pts:</strong> Cite 3+ dispositivos com número + lei + ano. Use conjugação: "consoante", "a teor de", "nos termos de". Subsuma fatos à norma. Traga jurisprudência STJ/STF se souber.</li>
+          <li><strong>OT 9pts:</strong> Máximo 3 erros leves: acento, vírgula, concordância. RASURAS: risco = desconto. Letra legível. 20-30 linhas.</li>
+          <li><strong>DLP 9pts:</strong> Parágrafos 4-6 linhas. Conectivos: "Outrossim", "Ademais", "Nesse sentido", "Dessarte". Vocabulário jurídico. Evite gerúndio vicioso, "onde" para coisa.</li>
+          <li><strong>ERROS QUE ZERAM:</strong> Fugir do tema. Não citar lei. Escrever menos de 10 linhas. Ilegível.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ABA LEGISLAÇÃO -->
+    <section id="legislacao" class="tab-content">
+      <div class="card">
+        <div class="card-header">
+          <h2 class="card-title">Legislação Completa - Links Oficiais Atualizados 06/2026</h2>
+          <span class="badge badge-accent">Fontes: Planalto, SUAS, DF</span>
+        </div>
+
+        <h3>Constituição e Normas Gerais</h3>
+        <ul style="list-style: none; margin-left: 0;">
+          <li style="margin: 0.75rem 0;">🔗 <a href="http://www.planalto.gov.br/ccivil_03/constituicao/constituicao.htm" target="_blank" style="color: var(--primary-light);">Constituição Federal 1988</a> - Arts. 1º-5º, 37-41, 203-204, 226-227</li>
+          <li style="margin: 0.75rem 0;">🔗 <a href="http://www.planalto.gov.br/ccivil_03/leis/lc/lc101.htm" target="_blank" style="color: var(--primary-light);">LC 101/2000</a> - LRF</li>
+          <li style="margin: 0.75rem 0;">🔗 <a href="http://www.sinj.df.gov.br/sinj/Norma/60284/Lei_840_23_12_2011.html" target="_blank" style="color: var(--primary-light);">LC 840/2011</a> - RJU Servidores DF</li>
+          <li style="margin: 0.75rem 0;">🔗 <a href="http://www.sinj.df.gov.br/sinj/Norma/66634/Lei_Organica_08_06_1993.html" target="_blank" style="color: var(--primary-light);">Lei Orgânica DF</a></li>
+        </ul>
+
+        <h3>SUAS e Assistência Social</h3>
+        <ul style="list-style: none; margin-left: 0;">
+          <li style="margin: 0.75rem 0;">🔗 <a href="http://www.planalto.gov.br/ccivil_03/leis/l8742.htm" target="_blank" style="color: var(--primary-light);">Lei 8.742/1993</a> - LOAS</li>
+          <li style="margin: 0.75rem 0;">🔗 <a href="https://www.mds.gov.br/webarquivos/publicacao/assistencia_social/Normativas/PNAS2004.pdf" target="_blank" style="color: var(--primary-light);">PNAS 2004</a></li>
+          <li style="margin: 0.75rem 0;">🔗 <a href="https://www.mds.gov.br/webarquivos/public/assistencia_social/Normativas/NOB-SUAS.pdf" target="_blank" style="color: var(--primary-light);">NOB/SUAS 2012</a></li>
+          <li style="margin: 0.75rem 0;">🔗 <a href="https://www.mds.gov.br/webarquivos/publicacao/assistencia_social/Normativas/tipificacao.pdf" target="_blank" style="color: var(--primary-light);">Tipificação Nacional Res. CNAS 109/2009</a></li>
+          <li style="margin: 0.75rem 0;">🔗 <a href="http://www.planalto.gov.br/ccivil_03/_ato2007-2010/2007/decreto/d6135.htm" target="_blank" style="color: var(--primary-light);">Decreto 6.135/2007</a> - CadÚnico</li>
+        </ul>
+
+        <h3>Proteções Específicas</h3>
+        <ul style="list-style: none; margin-left: 0;">
+          <li style="margin: 0.75rem 0;">🔗 <a href="http://www.planalto.gov.br/ccivil_03/leis/l8069.htm" target="_blank" style="color: var(--primary-light);">Lei 8.069/1990</a> - ECA</li>
+          <li style="margin: 0.75rem 0;">🔗 <a href="http://www.planalto.gov.br/ccivil_03/leis/2003/l10.741.htm" target="_blank" style="color: var(--primary-light);">Lei 10.741/2003</a> - Estatuto do Idoso</li>
+          <li style="margin: 0.75rem 0;">🔗 <a href="http://www.planalto.gov.br/ccivil_03/_ato2015-2018/2015/lei/l13146.htm" target="_blank" style="color: var(--primary-light);">Lei 13.146/2015</a> - Estatuto PcD</li>
+          <li style="margin: 0.75rem 0;">🔗 <a href="http://www.planalto.gov.br/ccivil_03/_ato2004-2006/2006/lei/l11340.htm" target="_blank" style="color: var(--primary-light);">Lei 11.340/2006</a> - Maria da Penha</li>
+          <li style="margin: 0.75rem 0;">🔗 <a href="http://www.planalto.gov.br/ccivil_03/_ato2007-2010/2009/decreto/d7053.htm" target="_blank" style="color: var(--primary-light);">Decreto 7.053/2009</a> - Pop Rua</li>
+        </ul>
+
+        <h3>Direitos e Acesso</h3>
+        <ul style="list-style: none; margin-left: 0;">
+          <li style="margin: 0.75rem 0;">🔗 <a href="http://www.planalto.gov.br/ccivil_03/_ato2011-2014/2011/lei/l12527.htm" target="_blank" style="color: var(--primary-light);">Lei 12.527/2011</a> - LAI</li>
+          <li style="margin: 0.75rem 0;">🔗 <a href="http://www.planalto.gov.br/ccivil_03/_ato2015-2018/2018/lei/l13709.htm" target="_blank" style="color: var(--primary-light);">Lei 13.709/2018</a> - LGPD</li>
+          <li style="margin: 0.75rem 0;">🔗 <a href="http://www.sinj.df.gov.br/sinj/" target="_blank" style="color: var(--primary-light);">SINJ-DF</a> - Leis DF: 7.484/24, 6.938/21, 7.371/23</li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+<script>
+// ========== APP STATE ==========
+const App = {
+  totalHours: 445,
+  questions: [],
+  leiseca: [],
+  simuladoState: {
+    active: false,
+    startTime: null,
+    timer: null,
+    answers: {},
+    marked: [],
+    currentQ: 0,
+    discursiva: '',
+    simuladoQuestions: [],
+    discursivaTema: null
+  }
+};
+
+// ========== DATA LOADING ==========
+function loadLeiseca() {
+  let data = [
+    {id:1, cat:'cf', num:'CF Art. 1º', texto:'A República Federativa do Brasil, formada pela união indissolúvel dos Estados e Municípios e do Distrito Federal, constitui-se em <mark>Estado Democrático de Direito</mark> e tem como fundamentos: I - a <mark>soberania</mark>; II - a <mark>cidadania</mark>; III - a <mark>dignidade da pessoa humana</mark>; IV - os <mark>valores sociais do trabalho e da livre iniciativa</mark>; V - o <mark>pluralismo político</mark>.', como:'Dignidade é fundamento, não objetivo. Não confundir com SO-CI-DI-VA-PLU.'},
+    {id:2, cat:'cf', num:'CF Art. 3º', texto:'Constituem objetivos fundamentais da República Federativa do Brasil: I - <mark>construir uma sociedade livre, justa e solidária</mark>; II - <mark>garantir o desenvolvimento nacional</mark>; III - <mark>erradicar a pobreza</mark> e a marginalização e reduzir as desigualdades sociais e regionais; IV - promover o bem de todos, sem preconceitos de origem, raça, sexo, cor, idade e quaisquer outras formas de discriminação.', como:'Objetivos = CON-GA-ER-PRO.'},
+    {id:3, cat:'cf', num:'CF Art. 5º, caput', texto:'Todos são <mark>iguais perante a lei</mark>, sem distinção de qualquer natureza, garantindo-se aos brasileiros e aos <mark>estrangeiros residentes no País</mark> a inviolabilidade do direito à <mark>vida, à liberdade, à igualdade, à segurança e à propriedade</mark>.', como:'Estrangeiro não residente NÃO tem garantia expressa.'},
+    {id:4, cat:'cf', num:'CF Art. 5º, I', texto:'<mark>homens e mulheres são iguais em direitos e obrigações</mark>, nos termos desta Constituição;', como:'Igualdade formal. Igualdade material admite tratamento desigual aos desiguais.'},
+    {id:5, cat:'cf', num:'CF Art. 5º, II', texto:'<mark>ninguém será obrigado a fazer ou deixar de fazer alguma coisa senão em virtude de lei</mark>;', como:'Princípio da Legalidade. Para particular: tudo que não é proibido. Para ADM: só o que a lei autoriza.'},
+    {id:6, cat:'cf', num:'CF Art. 5º, X', texto:'são <mark>invioláveis a intimidade, a vida privada, a honra e a imagem</mark> das pessoas, assegurado o direito a indenização pelo dano material ou moral decorrente de sua violação;', como:'Base para LGPD. Difere de privacidade.'},
+    {id:7, cat:'cf', num:'CF Art. 5º, XXXIII', texto:'todos têm direito a <mark>receber dos órgãos públicos informações</mark> de seu interesse particular, ou de interesse coletivo ou geral, que serão prestadas no prazo da lei, sob pena de responsabilidade, <mark>ressalvadas aquelas cujo sigilo seja imprescindível à segurança da sociedade e do Estado</mark>;', como:'Fundamento da LAI. Sigilo é exceção.'},
+    {id:8, cat:'cf', num:'CF Art. 5º, LV', texto:'aos litigantes, em <mark>processo judicial ou administrativo</mark>, e aos acusados em geral são assegurados o <mark>contraditório e ampla defesa</mark>, com os meios e recursos a ela inerentes;', como:'Aplica-se ao PAD. Ausência = nulidade.'},
+    {id:9, cat:'cf', num:'CF Art. 37, caput', texto:'A administração pública direta e indireta de qualquer dos Poderes da União, dos Estados, do Distrito Federal e dos Municípios obedecerá aos princípios de <mark>legalidade, impessoalidade, moralidade, publicidade e eficiência</mark>.', como:'LIMPE. Decorar ordem.'},
+    {id:10, cat:'cf', num:'CF Art. 37, II', texto:'a investidura em cargo ou emprego público depende de <mark>aprovação prévia em concurso público</mark> de provas ou de provas e títulos, de acordo com a natureza e a complexidade do cargo ou emprego, na forma prevista em lei, <mark>ressalvadas as nomeações para cargo em comissão</mark> declarado em lei de livre nomeação e exoneração;', como:'Cargo em comissão não precisa concurso, mas exige lei.'},
+    {id:11, cat:'cf', num:'CF Art. 37, §6º', texto:'As pessoas jurídicas de direito público e as de direito privado prestadoras de serviços públicos <mark>responderão pelos danos</mark> que seus agentes, nessa qualidade, causarem a terceiros, <mark>assegurado o direito de regresso</mark> contra o responsável nos casos de <mark>dolo ou culpa</mark>.', como:'Responsabilidade OBJETIVA do Estado. Teoria do Risco Administrativo.'},
+    {id:12, cat:'cf', num:'CF Art. 41, caput', texto:'São <mark>estáveis após três anos</mark> de efetivo exercício os servidores nomeados para cargo de provimento efetivo em virtude de concurso público.', como:'3 anos + avaliação especial. Não é automático.'},
+    {id:13, cat:'cf', num:'CF Art. 41, §1º', texto:'O servidor público estável só perderá o cargo: I - em virtude de <mark>sentença judicial transitada em julgado</mark>; II - mediante <mark>processo administrativo</mark> em que lhe seja assegurada ampla defesa; III - mediante <mark>procedimento de avaliação periódica de desempenho</mark>, na forma de lei complementar, assegurada ampla defesa.', como:'3 hipóteses. Inciso III nunca foi regulamentado.'},
+    {id:14, cat:'cf', num:'CF Art. 203', texto:'A assistência social será prestada a <mark>quem dela necessitar, independentemente de contribuição</mark> à seguridade social, e tem por objetivos: I - a <mark>proteção à família, à maternidade, à infância, à adolescência e à velhice</mark>; V - a garantia de <mark>um salário-mínimo de benefício mensal</mark> à pessoa portadora de deficiência e ao idoso que comprovem não possuir meios de prover à própria manutenção ou de tê-la provida por sua família, conforme dispuser a lei.', como:'Não contributiva. BPC tem matriz constitucional.'},
+    {id:15, cat:'cf', num:'CF Art. 204', texto:'As ações governamentais na área da assistência social serão realizadas com recursos do orçamento da seguridade social, previstos no art. 195, além de outras fontes, e organizadas com base nas seguintes diretrizes: I - <mark>descentralização político-administrativa</mark>; II - <mark>participação da população</mark>.', como:'Base do SUAS.'},
+    {id:16, cat:'cf', num:'CF Art. 6º', texto:'São direitos sociais a <mark>educação, a saúde, a alimentação, o trabalho, a moradia, o transporte, o lazer, a segurança, a previdência social, a proteção à maternidade e à infância, a assistência aos desamparados</mark>, na forma desta Constituição.', como:'EDU SAU ALI TRA MOR TRAN LAZ SEG PRE PRO MA INF ASS - mnemônico.'},
+    {id:17, cat:'cf', num:'CF Art. 37, XVI', texto:'é vedada a acumulação remunerada de cargos públicos, exceto, quando houver compatibilidade de horários: a) <mark>dois cargos de professor</mark>; b) <mark>um cargo de professor com outro técnico ou científico</mark>; c) <mark>dois cargos ou empregos privativos de profissionais de saúde</mark>, com profissões regulamentadas;', como:'Só 3 exceções. Exige compatibilidade de horários.'},
+    {id:18, cat:'cf', num:'CF Art. 37, XXI', texto:'ressalvados os casos especificados na legislação, as obras, serviços, compras e alienações serão contratados mediante <mark>processo de licitação pública</mark> que assegure igualdade de condições a todos os concorrentes.', como:'Licitação é regra. Dispensa/inexigibilidade é exceção.'},
+    {id:19, cat:'cf', num:'CF Art. 40', texto:'Aos servidores titulares de cargos efetivos da União, dos Estados, do Distrito Federal e dos Municípios, incluídas suas autarquias e fundações, é assegurado regime de previdência de caráter contributivo e solidário, mediante contribuição do respectivo ente público, dos servidores ativos e inativos e dos pensionistas, observados critérios que preservem o equilíbrio financeiro e atuarial.', como:'Regime próprio - RPPS. Teto e subteto.'},
+    {id:20, cat:'cf', num:'CF Art. 129', texto:'São funções institucionais do Ministério Público: VI - <mark>expedir notificações</mark> nos procedimentos administrativos de sua competência, <mark>requisitando informações e documentos</mark> para instruí-los, na forma da lei complementar respectiva;', como:'MP tem poder requisitório. Base para solicitar dados CadÚnico.'},
+    {id:21, cat:'cf', num:'CF Art. 194', texto:'A <mark>seguridade social</mark> compreende um conjunto integrado de ações de iniciativa dos Poderes Públicos e da sociedade, destinadas a assegurar os direitos relativos à <mark>saúde, à previdência e à assistência social</mark>.', como:'Tripé: Saúde + Previdência + Assistência.'},
+    {id:22, cat:'cf', num:'CF Art. 195', texto:'A seguridade social será financiada por toda a sociedade, de forma direta e indireta, nos termos da lei, mediante recursos provenientes dos orçamentos da União, dos Estados, do Distrito Federal e dos Municípios, e das seguintes <mark>contribuições sociais</mark>...', como:'Assitência NÃO é custeada por contribuição do beneficiário, mas Orçamento Seguridade.'},
+    {id:23, cat:'cf', num:'CF Art. 226', texto:'A <mark>família, base da sociedade</mark>, tem especial proteção do Estado. §8º O Estado assegurará a <mark>assistência à família</mark> na pessoa de cada um dos que a integram, criando mecanismos para coibir a violência no âmbito de suas relações.', como:'Fundamento proteção família e Lei Maria da Penha.'},
+    {id:24, cat:'cf', num:'CF Art. 227', texto:'É dever da família, da sociedade e do Estado assegurar à criança, ao adolescente e ao jovem, com <mark>absoluta prioridade</mark>, o direito à vida, à saúde, à alimentação, à educação, ao lazer, à profissionalização, à cultura, à dignidade, ao respeito, à liberdade e à convivência familiar e comunitária, além de colocá-los a salvo de toda forma de negligência, discriminação, exploração, violência, crueldade e opressão.', como:'Matriz ECA. Absoluta prioridade.'},
+    {id:25, cat:'cf', num:'CF Art. 230', texto:'A família, a sociedade e o Estado têm o dever de <mark>amparar as pessoas idosas</mark>, assegurando sua participação na comunidade, defendendo sua dignidade e bem-estar e garantindo-lhes o direito à vida.', como:'Matriz Estatuto Idoso.'},
+    {id:26, cat:'lc840', num:'LC 840 Art. 3º', texto:'<mark>Servidor público</mark> é a pessoa legalmente investida em cargo público. <mark>Cargo público</mark> é o conjunto de atribuições e responsabilidades previstas na estrutura organizacional que devem ser cometidas a um servidor.', como:'Servidor = pessoa física. Cargo criado por lei, não decreto.'},
+    {id:27, cat:'lc840', num:'LC 840 Art. 17', texto:'É de <mark>trinta dias o prazo</mark> para o servidor empossado em cargo público entrar em exercício, <mark>contados da data da posse</mark>, prorrogável por igual período, mediante requerimento do interessado apresentado até o término do prazo inicial.', como:'30 + 30 = 60 dias máximo.'},
+    {id:28, cat:'lc840', num:'LC 840 Art. 41', texto:'O servidor habilitado em concurso público e empossado em cargo de provimento efetivo adquirirá estabilidade no serviço público ao <mark>completar três anos</mark> de efetivo exercício.', como:'Estabilidade: 3 anos efetivo exercício.'},
+    {id:29, cat:'lc840', num:'LC 840 Art. 180, IV', texto:'São deveres do servidor: IV - cumprir as ordens superiores, <mark>exceto quando manifestamente ilegais</mark>;', como:'Não é cego cumprimento. Ordem manifestamente ilegal não se cumpre.'},
+    {id:30, cat:'lc840', num:'LC 840 Art. 180, VIII', texto:'<mark>guardar sigilo</mark> sobre assunto da repartição;', como:'Dever de sigilo. Viola = advertência ou mais.'},
+    {id:31, cat:'lc840', num:'LC 840 Art. 187, X', texto:'É proibido <mark>participar de gerência ou administração de sociedade privada</mark>, personificada ou não, <mark>salvo em gozo de licença</mark> para tratar de interesses particulares, observada a legislação sobre conflito de interesses;', como:'Pode ser sócio, não pode ser gerente. Licença quebra proibição.'},
+    {id:32, cat:'lc840', num:'LC 840 Art. 198', texto:'A <mark>advertência</mark> será aplicada por escrito, nos casos de violação de proibição constante do art. 187, incisos I a VIII e XIX, e de inobservância de dever funcional previsto em lei, regulamentação ou norma interna, que não justifique imposição de penalidade mais grave.', como:'Advertência: 180 dias prescrição. Cancela em 3 anos.'},
+    {id:33, cat:'lc840', num:'LC 840 Art. 199', texto:'A <mark>suspensão</mark> será aplicada em caso de reincidência das faltas punidas com advertência e de violação das demais proibições que não tipifiquem infração sujeita a penalidade de demissão, <mark>não podendo exceder noventa dias</mark>.', como:'Suspensão até 90 dias. 2 anos prescrição.'},
+    {id:34, cat:'lc840', num:'LC 840 Art. 202', texto:'A <mark>demissão</mark> será aplicada nos casos de: I - crime contra a administração pública; II - abandono de cargo; III - inassiduidade habitual; IV - improbidade administrativa; VI - incontinência pública e conduta escandalosa;', como:'Demissão: 5 anos prescrição. Rol exemplificativo.'},
+    {id:35, cat:'lc840', num:'LC 840 Art. 204', texto:'Configura <mark>abandono de cargo</mark> a ausência intencional do servidor ao serviço por mais de <mark>trinta dias consecutivos</mark>.', como:'30 dias CONSECUTIVOS. Intenção exigida.'},
+    {id:36, cat:'lc840', num:'LC 840 Art. 205', texto:'Entende-se por <mark>inassiduidade habitual</mark> a falta ao serviço, sem causa justificada, por <mark>sessenta dias, interpoladamente</mark>, durante o período de doze meses.', como:'60 dias INTERPOLADOS em 12 meses.'},
+    {id:37, cat:'lc840', num:'LC 840 Art. 207', texto:'A ação disciplinar prescreverá: I - em <mark>cinco anos, quanto às infrações puníveis com demissão</mark>, cassação de aposentadoria ou disponibilidade e destituição de cargo em comissão; II - em <mark>dois anos, quanto à suspensão</mark>; III - em <mark>cento e oitenta dias, quanto à advertência</mark>.', como:'5-2-180 dias. Crime = prazo penal.'},
+    {id:38, cat:'lc840', num:'LC 840 Art. 212', texto:'Da <mark>sindicância</mark> poderá resultar: I - arquivamento do processo; II - aplicação de penalidade de <mark>advertência ou suspensão de até trinta dias</mark>; III - instauração de processo disciplinar. Parágrafo único. O prazo para conclusão da sindicância não excederá <mark>trinta dias</mark>, podendo ser prorrogado por igual período, a critério da autoridade superior.', como:'Sindicância 30+30 dias. Pode punir até 30d suspensão.'},
+    {id:39, cat:'lc840', num:'LC 840 Art. 217', texto:'O prazo para a conclusão do <mark>processo disciplinar</mark> não excederá <mark>sessenta dias</mark>, contados da data de publicação do ato que constituir a comissão, admitida a sua prorrogação por igual prazo, quando as circunstâncias o exigirem.', como:'PAD 60+60 dias. Julgamento 20 dias.'},
+    {id:40, cat:'lc840', num:'LC 840 Art. 36', texto:'<mark>Recondução</mark> é o retorno do servidor estável ao cargo anteriormente ocupado e decorrerá de: I - inabilitação em estágio probatório relativo a outro cargo; II - reintegração do anterior ocupante.', como:'Recondução = volta cargo anterior.'},
+    {id:41, cat:'lc840', num:'LC 840 Art. 180, XI', texto:'tratar com <mark>urbanidade</mark> as pessoas;', como:'Urbanidade é dever. Quebrar = advertência.'},
+    {id:42, cat:'lc840', num:'LC 840 Art. 187, IX', texto:'<mark>valer-se do cargo para lograr proveito pessoal</mark> ou de outrem, em detrimento da dignidade da função pública;', como:'Proibição grave. Demissão.'},
+    {id:43, cat:'lc840', num:'LC 840 Art. 187, XI', texto:'receber <mark>propina, comissão, presente ou vantagem</mark> de qualquer espécie, em razão de suas atribuições;', como:'Proibição gravíssima. Demissão + crime.'},
+    {id:44, cat:'lc840', num:'LC 840 Art. 63', texto:'<mark>Vencimento</mark> é a retribuição pecuniária pelo exercício de cargo público, com valor fixado em lei.', como:'Vencimento = base. Remuneração = vencimento + vantagens.'},
+    {id:45, cat:'lc840', num:'LC 840 Art. 64', texto:'<mark>Remuneração</mark> é o vencimento do cargo efetivo, acrescido das vantagens pecuniárias permanentes estabelecidas em lei.', como:'Remuneração > Vencimento.'},
+    {id:46, cat:'loas', num:'LOAS Art. 1º', texto:'A assistência social, <mark>direito do cidadão e dever do Estado</mark>, é Política de Seguridade Social <mark>não contributiva</mark>, que provê os <mark>mínimos sociais</mark>, realizada através de conjunto integrado de ações de iniciativa pública e da sociedade, para garantir o atendimento às necessidades básicas.', como:'NÃO CONTRIBUTIVA. Diferente de previdência.'},
+    {id:47, cat:'loas', num:'LOAS Art. 2º, I', texto:'A assistência social tem por objetivos: I - a <mark>proteção social</mark>, que visa à garantia da vida, à redução de danos e à prevenção de incidências de riscos, especialmente: a) a <mark>proteção à família, à maternidade, à infância, à adolescência e à velhice</mark>;', como:'Proteção social é objetivo, não diretriz.'},
+    {id:48, cat:'loas', num:'LOAS Art. 20, caput', texto:'O benefício de prestação continuada é a garantia de <mark>um salário-mínimo mensal</mark> à <mark>pessoa com deficiência e ao idoso com sessenta e cinco anos ou mais</mark> que comprovem <mark>não possuir meios de prover a própria manutenção</mark> nem de tê-la provida por sua família.', como:'BPC: 1 SM, PcD ou 65+, 1/4 SM per capita.'},
+    {id:49, cat:'loas', num:'LOAS Art. 20, §3º', texto:'Considera-se incapaz de prover a manutenção da pessoa portadora de deficiência ou idosa a família cuja <mark>renda mensal per capita seja inferior a 1/4 (um quarto) do salário-mínimo</mark>.', como:'1/4 SM. STF admite flexibilização em casos concretos.'},
+    {id:50, cat:'loas', num:'LOAS Art. 22', texto:'Entendem-se por benefícios eventuais as <mark>provisões suplementares e provisórias</mark> que integram organicamente as garantias do Suas e são prestadas aos cidadãos e às famílias em virtude de <mark>nascimento, morte, situações de vulnerabilidade temporária e de calamidade pública</mark>.', como:'Nascimento, morte, vulnerabilidade, calamidade. 4 hipóteses.'},
+    {id:51, cat:'loas', num:'LOAS Art. 6º', texto:'As ações na área de assistência social são organizadas em sistema descentralizado e participativo, denominado <mark>Sistema Único de Assistência Social - Suas</mark>.', como:'SUAS = descentralizado e participativo.'},
+    {id:52, cat:'loas', num:'LOAS Art. 20, §4º', texto:'O benefício de que trata este artigo <mark>não pode ser acumulado</mark> pelo beneficiário com qualquer outro no âmbito da seguridade social ou de outro regime, <mark>salvo o da assistência médica e da pensão especial de natureza indenizatória</mark>.', como:'BPC não acumula com aposentad. Acumula com pensão indenizatória.'},
+    {id:53, cat:'loas', num:'LOAS Art. 21', texto:'O benefício de prestação continuada deve ser <mark>revisto a cada dois anos</mark> para avaliação da continuidade das condições que lhe deram origem.', como:'BPC revisa 2 em 2 anos.'},
+    {id:54, cat:'loas', num:'LOAS Art. 21-A', texto:'O benefício de prestação continuada será <mark>suspenso</mark> pelo órgão concedente <mark>quando a pessoa com deficiência exercer atividade remunerada</mark>, inclusive na condição de microempreendedor individual.', como:'PcD BPC trabalha = suspende. Pode reativar.'},
+    {id:55, cat:'loas', num:'LOAS Art. 22, §1º', texto:'A concessão e o valor dos benefícios de que trata este artigo serão definidos pelos <mark>Estados, Distrito Federal e Municípios</mark> e previstos nas respectivas leis orçamentárias anuais.', como:'Benefício eventual é competência Estado/DF/Município, não União.'},
+    {id:56, cat:'loas', num:'LOAS Art. 23', texto:'Entendem-se por <mark>serviços socioassistenciais</mark> as atividades continuadas que visem à melhoria de vida da população e cujas ações, voltadas para as necessidades básicas, observem os objetivos, princípios e diretrizes estabelecidos nesta Lei.', como:'Serviços = continuados. Benefícios = eventuais.'},
+    {id:57, cat:'loas', num:'LOAS Art. 15', texto:'Compete aos <mark>Municípios</mark>: V - <mark>prestar os serviços assistenciais</mark> de que trata o art. 23 desta Lei.', como:'Município executa serviços.'},
+    {id:58, cat:'loas', num:'LOAS Art. 13', texto:'Compete aos <mark>Estados</mark>: I - destinar recursos financeiros aos Municípios, a título de participação no custeio do pagamento dos benefícios eventuais...; II - <mark>apoiar técnica e financeiramente os serviços</mark>...', como:'Estado apoia municípios.'},
+    {id:59, cat:'loas', num:'LOAS Art. 5º', texto:'A organização da assistência social tem como base as seguintes diretrizes: I - <mark>descentralização político-administrativa</mark> para os Estados, o Distrito Federal e os Municípios, e comando único das ações em cada esfera de governo; III - <mark>primazia da responsabilidade do Estado</mark> na condução da política de assistência social em cada esfera de governo.', como:'Descentralização + Primazia Estado.'},
+    {id:60, cat:'loas', num:'LOAS Art. 4º', texto:'A assistência social rege-se pelos seguintes princípios: I - <mark>supremacia do atendimento às necessidades sociais</mark> sobre as exigências de rentabilidade econômica; II - <mark>universalização dos direitos sociais</mark>...; III - respeito à dignidade do cidadão...', como:'Princípios LOAS. Supremacia necessidade social.'},
+    {id:61, cat:'eca', num:'ECA Art. 2º', texto:'Considera-se <mark>criança</mark>, para os efeitos desta Lei, a pessoa <mark>até doze anos de idade incompletos</mark>, e <mark>adolescente</mark> aquela entre <mark>doze e dezoito anos</mark> de idade.', como:'0 a 11 anos 11mes 29d = criança. 12 a 17 = adolescente.'},
+    {id:62, cat:'eca', num:'ECA Art. 4º', texto:'É dever da família, da comunidade, da sociedade em geral e do poder público assegurar, com <mark>absoluta prioridade</mark>, a efetivação dos direitos referentes à vida, à saúde, à alimentação, à educação, ao esporte, ao lazer, à profissionalização, à cultura, à dignidade, ao respeito, à liberdade e à convivência familiar e comunitária.', como:'Absoluta prioridade = princípio regente do ECA.'},
+    {id:63, cat:'eca', num:'ECA Art. 131', texto:'O <mark>Conselho Tutelar</mark> é órgão <mark>permanente e autônomo, não jurisdicional</mark>, encarregado pela sociedade de zelar pelo cumprimento dos direitos da criança e do adolescente, definidos nesta Lei.', como:'Não é do Judiciário. Não aplica medida socioeducativa.'},
+    {id:64, cat:'eca', num:'ECA Art. 132', texto:'Em cada Município e em cada Região Administrativa do Distrito Federal haverá, no mínimo, <mark>um Conselho Tutelar</mark> como órgão integrante da administração pública local, composto de <mark>cinco membros</mark>, escolhidos pela população local para mandato de <mark>quatro anos</mark>, permitida <mark>recondução</mark> por novos processos de escolha.', como:'5 membros, 4 anos, recondução permitida.'},
+    {id:65, cat:'eca', num:'ECA Art. 136', texto:'São atribuições do Conselho Tutelar: I - atender as crianças e adolescentes...; II - atender e aconselhar os pais...; III - <mark>promover a execução de suas decisões</mark>...; IV - <mark>encaminhar ao Ministério Público</mark> notícia de fato que constitua infração administrativa ou penal contra os direitos da criança ou adolescente;', como:'CT não julga. Encaminha MP.'},
+    {id:66, cat:'eca', num:'ECA Art. 98', texto:'As medidas de proteção à criança e ao adolescente são aplicáveis sempre que os direitos reconhecidos nesta Lei forem <mark>ameaçados ou violados</mark>: I - por ação ou omissão da sociedade ou do Estado; II - por <mark>falta, omissão ou abuso dos pais</mark> ou responsável; III - em razão de sua conduta.', como:'Quando aplicar medida proteção.'},
+    {id:67, cat:'eca', num:'ECA Art. 101', texto:'Verificada qualquer das hipóteses previstas no art. 98, a autoridade competente poderá determinar, dentre outras, as seguintes medidas: VII - <mark>acolhimento institucional</mark>; VIII - inclusão em <mark>programa de acolhimento familiar</mark>;', como:'Acolhimento = medida proteção. Último recurso.'},
+    {id:68, cat:'eca', num:'ECA Art. 19', texto:'É direito da criança e do adolescente ser <mark>criado e educado no seio de sua família</mark> e, excepcionalmente, em família substituta, assegurada a convivência familiar e comunitária, em ambiente que garanta seu desenvolvimento integral.', como:'Convivência familiar é direito. Acolhimento é exceção.'},
+    {id:69, cat:'eca', num:'ECA Art. 86', texto:'A política de atendimento dos direitos da criança e do adolescente far-se-á através de um <mark>conjunto articulado de ações governamentais e não-governamentais</mark>, da União, dos estados, do Distrito Federal e dos municípios.', como:'Política = articulada governo + sociedade.'},
+    {id:70, cat:'eca', num:'ECA Art. 87', texto:'São linhas de ação da política de atendimento: I - políticas sociais básicas; II - serviços, programas, projetos e benefícios de <mark>assistência social</mark>...; III - serviços especiais de prevenção e atendimento médico e psicossocial às vítimas de negligência, maus-tratos, exploração, abuso, crueldade e opressão;', como:'Assistência Social é linha de ação ECA.'},
+    {id:71, cat:'eca', num:'ECA Art. 90', texto:'As entidades de atendimento são responsáveis pela <mark>manutenção das próprias unidades</mark>, assim como pelo planejamento e execução de programas de proteção e socioeducativos destinados a crianças e adolescentes, em regime de: I - orientação e apoio sociofamiliar; II - apoio socioeducativo em meio aberto; III - colocação familiar; IV - <mark>acolhimento institucional</mark>;', como:'Acolhimento institucional é regime de entidade.'},
+    {id:72, cat:'eca', num:'ECA Art. 93', texto:'As entidades que mantenham programa de acolhimento institucional poderão, em caráter <mark>excepcional e de urgência, acolher crianças e adolescentes</mark> sem prévia determinação da autoridade competente, fazendo comunicação do fato em até <mark>24 (vinte e quatro) horas</mark> ao Juiz da Infância e da Juventude, sob pena de responsabilidade.', como:'Acolhimento urgência sem ordem judicial = 24h comunicar juiz.'},
+    {id:73, cat:'eca', num:'ECA Art. 100', texto:'Na aplicação das medidas levar-se-ão em conta as necessidades pedagógicas, preferindo-se aquelas que visem ao <mark>fortalecimento dos vínculos familiares e comunitários</mark>.', como:'Princípio: fortalecer vínculos.'},
+    {id:74, cat:'eca', num:'ECA Art. 141', texto:'É garantido o <mark>acesso de toda criança ou adolescente à Defensoria Pública</mark>, ao Ministério Público e ao Poder Judiciário, por qualquer de seus órgãos.', como:'Acesso Justiça garantido.'},
+    {id:75, cat:'eca', num:'ECA Art. 88', texto:'São diretrizes da política de atendimento: <mark>municipalização do atendimento</mark>; II - criação de <mark>conselhos municipais, estaduais e nacional</mark> dos direitos da criança e do adolescente...', como:'Municipalização + Conselhos.'},
+    {id:76, cat:'lodf', num:'LODF Art. 19, caput', texto:'A administração pública direta e indireta de qualquer dos Poderes do Distrito Federal obedecerá aos princípios de <mark>legalidade, impessoalidade, moralidade, publicidade, transparência, eficiência, motivação, razoabilidade, proporcionalidade, ampla defesa, contraditório, segurança jurídica, interesse público e cortesia</mark>.', como:'LODF amplia LIMPE com mais princípios.'},
+    {id:77, cat:'lodf', num:'LODF Art. 19, §8º', texto:'É <mark>vedada a nomeação</mark> ou designação para cargos em comissão e funções de confiança, de <mark>cônjuge, companheiro ou parente</mark> em linha reta, colateral ou por afinidade, até o terceiro grau, da autoridade nomeante ou de servidor... investido em cargo de direção, chefia ou assessoramento...', como:'Vedação nepotismo. Súmula Vinculante 13.'},
+    {id:78, cat:'lodf', num:'LODF Art. 20', texto:'A investidura em cargo ou emprego público depende de <mark>aprovação prévia em concurso público</mark> de provas ou de provas e títulos, de acordo com a natureza e a complexidade do cargo ou emprego, na forma prevista em lei, <mark>ressalvadas as nomeações para cargo em comissão</mark> declarado em lei de livre nomeação e exoneração.', como:'Concurso regra. Comissão exceção.'},
+    {id:79, cat:'lodf', num:'LODF Art. 21', texto:'Os cargos em comissão e as funções de confiança serão exercidos, preferencialmente, por <mark>servidores ocupantes de cargo de carreira técnica ou profissional</mark>, nos casos e condições previstos em lei.', como:'Comissão = preferencialmente servidor carreira.'},
+    {id:80, cat:'lodf', num:'LODF Art. 28', texto:'É <mark>vedada a acumulação remunerada</mark> de cargos públicos, exceto, quando houver compatibilidade de horários, observado em qualquer caso o disposto no inciso XI do art. 19: a) a de dois cargos de professor; b) a de <mark>um cargo de professor com outro técnico ou científico</mark>; c) a de dois cargos ou empregos privativos de profissionais de saúde, com profissões regulamentadas.', como:'Mesmas exceções CF 37 XVI.'},
+    {id:81, cat:'mp', num:'Lei 11.340 Art. 5º', texto:'Configura <mark>violência doméstica e familiar contra a mulher</mark> qualquer ação ou omissão baseada no gênero que lhe cause morte, lesão, sofrimento físico, sexual ou psicológico e dano moral ou patrimonial: I - no âmbito da <mark>unidade doméstica</mark>; II - no âmbito da <mark>família</mark>; III - em qualquer <mark>relação íntima de afeto</mark>, na qual o agressor conviva ou tenha convivido com a ofendida, <mark>independentemente de coabitação</mark>.', como:'Não exige coabitação. Ex-namorado inclui.'},
+    {id:82, cat:'mp', num:'Lei 11.340 Art. 7º, I', texto:'São formas de violência doméstica e familiar contra a mulher, entre outras: I - a <mark>violência física</mark>, entendida como qualquer conduta que ofenda sua integridade ou saúde corporal;', como:'Violência física: lesão, vias de fato.'},
+    {id:83, cat:'mp', num:'Lei 11.340 Art. 7º, II', texto:'II - a <mark>violência psicológica</mark>, entendida como qualquer conduta que lhe cause <mark>dano emocional e diminuição da autoestima</mark> ou que lhe prejudique e perturbe o pleno desenvolvimento ou que vise degradar ou controlar suas ações, comportamentos, crenças e decisões, mediante ameaça, constrangimento, humilhação, manipulação, isolamento, vigilância constante, perseguição contumaz, insulto, chantagem, violação de sua intimidade, ridicularização, exploração e <mark>limitação do direito de ir e vir</mark> ou qualquer outro meio que lhe cause prejuízo à saúde psicológica e à autodeterminação;', como:'Rol exemplificativo. Gaslighting se enquadra.'},
+    {id:84, cat:'mp', num:'Lei 11.340 Art. 7º, III', texto:'III - a <mark>violência sexual</mark>, entendida como qualquer conduta que a constranja a presenciar, a manter ou a participar de relação sexual não desejada, mediante intimidação, ameaça, coação ou uso da força; que a induza a comercializar ou a utilizar, de qualquer modo, a sua sexualidade, que a impeça de usar qualquer método contraceptivo ou que a force ao matrimônio, à gravidez, ao aborto ou à prostituição, mediante coação, chantagem, suborno ou manipulação; ou que limite ou anule o exercício de seus direitos sexuais e reprodutivos;', como:'Inclui impedir contraceptivo e forçar gravidez/aborto.'},
+    {id:85, cat:'mp', num:'Lei 11.340 Art. 7º, IV', texto:'IV - a <mark>violência patrimonial</mark>, entendida como qualquer conduta que configure retenção, subtração, destruição parcial ou total de seus objetos, instrumentos de trabalho, documentos pessoais, bens, valores e direitos ou recursos econômicos, incluindo os destinados a satisfazer suas necessidades;', como:'Rasgar documentos, pegar salário, vender bens.'},
+    {id:86, cat:'mp', num:'Lei 11.340 Art. 7º, V', texto:'V - a <mark>violência moral</mark>, entendida como qualquer conduta que configure <mark>calúnia, difamação ou injúria</mark>.', como:'Calúnia = imputar crime falso. Difamação = fato ofensivo. Injúria = xingar.'},
+    {id:87, cat:'mp', num:'Lei 11.340 Art. 22', texto:'Constatada a prática de violência doméstica e familiar contra a mulher, nos termos desta Lei, o juiz poderá aplicar, de imediato, ao agressor, em conjunto ou separadamente, as seguintes <mark>medidas protetivas de urgência</mark>: I - suspensão da posse ou restrição do <mark>porte de armas</mark>; II - <mark>afastamento do lar</mark>, domicílio ou local de convivência com a ofendida; III - <mark>proibição</mark> de determinadas condutas, entre as quais: a) aproximação da ofendida... b) contato com a ofendida...; IV - <mark>restrição ou suspensão de visitas</mark> aos dependentes menores...; V - prestação de <mark>alimentos provisionais</mark> ou provisórios.', como:'MPU rol I a V. Juiz pode outras.'},
+    {id:88, cat:'mp', num:'Lei 11.340 Art. 9º', texto:'A assistência à mulher em situação de violência doméstica e familiar será prestada de forma <mark>articulada</mark> e conforme os princípios e as diretrizes previstos na <mark>Lei Orgânica da Assistência Social</mark>, no Sistema Único de Saúde, no Sistema Único de Segurança Pública, entre outras normas e políticas públicas de proteção, e <mark>emergencialmente quando for o caso</mark>.', como:'Articulação rede. Assistência Social é porta.'},
+    {id:89, cat:'mp', num:'Lei 11.340 Art. 11', texto:'No atendimento à mulher em situação de violência doméstica e familiar, a <mark>autoridade policial</mark> deverá, entre outras providências: I - garantir <mark>proteção policial</mark>...; II - comunicar de imediato ao <mark>Ministério Público</mark> e ao <mark>Poder Judiciário</mark>; III - encaminhar a ofendida ao hospital ou posto de saúde e ao <mark>Instituto Médico Legal</mark>; IV - fornecer <mark>transporte</mark> para a ofendida e seus dependentes para abrigo ou local seguro...; V - se necessário, <mark>acompanhar</mark> a ofendida para assegurar a retirada de seus pertences do local da ocorrência ou do domicílio familiar;', como:'Delegacia = várias providências. Não só BO.'},
+    {id:90, cat:'mp', num:'Lei 11.340 Art. 12-C', texto:'Verificada a existência de <mark>risco atual ou iminente à vida</mark> ou à integridade física ou psicológica da mulher em situação de violência doméstica e familiar, ou de seus dependentes, o agressor será <mark>imediatamente afastado do lar</mark>, domicílio ou local de convivência com a ofendida: I - pelo <mark>juiz</mark>; II - pelo <mark>delegado de polícia</mark>, quando o Município não for sede de comarca; ou III - pelo <mark>policial</mark>, quando o Município não for sede de comarca e não houver delegado disponível no momento da denúncia.', como:'Afastamento pode ser por delegado/policial em urgência.'},
+    {id:91, cat:'lgpd', num:'LGPD Art. 5º, I', texto:'<mark>dado pessoal</mark>: informação relacionada a pessoa natural identificada ou identificável;', como:'Nome, CPF, endereço = pessoal. Dado anonimizado = não pessoal.'},
+    {id:92, cat:'lgpd', num:'LGPD Art. 5º, II', texto:'<mark>dado pessoal sensível</mark>: dado pessoal sobre <mark>origem racial ou étnica, convicção religiosa, opinião política</mark>, filiação a sindicato ou a organização de caráter religioso, filosófico ou político, dado referente à <mark>saúde ou à vida sexual</mark>, dado <mark>genético ou biométrico</mark>, quando vinculado a uma pessoa natural;', como:'Saúde = sensível. CPF = pessoal comum.'},
+    {id:93, cat:'lgpd', num:'LGPD Art. 7º, II', texto:'O tratamento de dados pessoais somente poderá ser realizado nas seguintes hipóteses: II - para o <mark>cumprimento de obrigação legal</mark> ou regulatória pelo controlador;', como:'MP requisitando CadÚnico = base legal II.'},
+    {id:94, cat:'lgpd', num:'LGPD Art. 7º, III', texto:'III - pela <mark>administração pública</mark>, para o tratamento e uso compartilhado de dados <mark>necessários à execução de políticas públicas</mark> previstas em leis e regulamentos ou respaldadas em contratos, convênios ou instrumentos congêneres...;', como:'SEDES tratando dados CadÚnico = base legal III.'},
+    {id:95, cat:'lgpd', num:'LGPD Art. 11', texto:'O tratamento de dados pessoais sensíveis somente poderá ocorrer nas seguintes hipóteses: II - sem fornecimento de consentimento do titular, nas hipóteses em que for indispensável para: a) <mark>cumprimento de obrigação legal</mark> ou regulatória pelo controlador; b) tratamento compartilhado de dados <mark>necessários à execução, pela administração pública, de políticas públicas</mark> previstas em leis ou regulamentos;', como:'Dados sensíveis CadÚnico = base II-a e II-b.'},
+    {id:96, cat:'lgpd', num:'LGPD Art. 6º, III', texto:'As atividades de tratamento de dados pessoais deverão observar a boa-fé e os seguintes princípios: III - <mark>necessidade</mark>: limitação do tratamento ao <mark>mínimo necessário</mark> para a realização de suas finalidades, com abrangência dos dados pertinentes, proporcionais e não excessivos em relação às finalidades do tratamento de dados;', como:'Princípio necessidade. MP pedir 10mil famílias genérico viola.'},
+    {id:97, cat:'lgpd', num:'LGPD Art. 18', texto:'O titular dos dados pessoais tem direito a obter do controlador, em relação aos dados do titular por ele tratados, a qualquer momento e mediante requisição: I - <mark>confirmação da existência</mark> de tratamento; II - <mark>acesso aos dados</mark>; V - <mark>informação</mark> das entidades públicas e privadas com as quais o controlador realizou <mark>uso compartilhado</mark> de dados;', como:'Direito informação compartilhamento. MP deve comunicar titular se não prejudicar investigação.'},
+    {id:98, cat:'lgpd', num:'LGPD Art. 23', texto:'O tratamento de dados pessoais pelas pessoas jurídicas de direito público referidas no parágrafo único do art. 1º da Lei nº 12.527, de 18 de novembro de 2011 (Lei de Acesso à Informação), deverá ser realizado para o <mark>atendimento de sua finalidade pública</mark>, na persecução do interesse público, com o objetivo de executar as competências legais ou cumprir as atribuições legais do serviço público...', como:'Administração Pública só trata dados para finalidade pública.'},
+    {id:99, cat:'lgpd', num:'LGPD Art. 42', texto:'O controlador ou o operador que, em razão do exercício de atividade de tratamento de dados pessoais, causar a outrem <mark>dano patrimonial, moral, individual ou coletivo</mark>, em violação à legislação de proteção de dados pessoais, é obrigado a repará-lo.', como:'Responsabilidade civil LGPD. Dano por vazamento.'},
+    {id:100, cat:'lgpd', num:'LGPD Art. 52', texto:'Os agentes de tratamento de dados, em razão das infrações cometidas às normas previstas nesta Lei, ficam sujeitos às seguintes <mark>sanções administrativas</mark> aplicáveis pela autoridade nacional: II - <mark>multa simples, de até 2% (dois por cento) do faturamento</mark> da pessoa jurídica de direito privado, grupo ou conglomerado no Brasil no seu último exercício, excluídos os tributos, <mark>limitada, no total, a R$ 50.000.000,00 (cinquenta milhões de reais)</mark> por infração;', como:'Multa até 50 mi. Órgão público não paga, mas responde civil.'},
+    {id:101, cat:'lai', num:'LAI Art. 1º', texto:'Esta Lei dispõe sobre os procedimentos a serem observados pela União, Estados, Distrito Federal e Municípios, com o fim de <mark>garantir o acesso a informações</mark> previsto no <mark>inciso XXXIII do art. 5º</mark>...', como:'LAI regulamenta CF 5º XXXIII.'},
+    {id:102, cat:'lai', num:'LAI Art. 3º', texto:'Os procedimentos previstos nesta Lei destinam-se a assegurar o direito fundamental de acesso à informação e devem ser executados em conformidade com os princípios básicos da administração pública e com as seguintes diretrizes: I - observância da <mark>publicidade como preceito geral</mark> e do <mark>sigilo como exceção</mark>;', como:'Publicidade regra, sigilo exceção.'},
+    {id:103, cat:'lai', num:'LAI Art. 11', texto:'O órgão ou entidade pública deverá autorizar ou conceder o acesso imediato à informação disponível. §1º Não sendo possível conceder o acesso imediato, na forma disposta no caput, o órgão ou entidade que receber o pedido deverá, em <mark>prazo não superior a 20 (vinte) dias</mark>: §2º O prazo referido no §1º poderá ser prorrogado por mais <mark>10 (dez) dias</mark>, mediante justificativa expressa, da qual será cientificado o requerente.', como:'20 + 10 = 30 dias máximo.'},
+    {id:104, cat:'lai', num:'LAI Art. 31', texto:'O tratamento das <mark>informações pessoais</mark> deve ser feito de forma <mark>transparente e com respeito à intimidade, vida privada, honra e imagem</mark> das pessoas, bem como às liberdades e garantias individuais. §1º As informações pessoais, a que se refere este artigo, relativas à intimidade, vida privada, honra e imagem: I - terão seu acesso <mark>restrito</mark>... pelo prazo máximo de <mark>100 (cem) anos</mark> a contar da sua data de produção...', como:'Dados pessoais LAI = sigilo 100 anos.'},
+    {id:105, cat:'lai', num:'LAI Art. 23', texto:'São consideradas <mark>imprescindíveis à segurança da sociedade ou do Estado</mark> e, portanto, passíveis de classificação as informações cuja divulgação ou acesso irrestrito possam: I - <mark>pôr em risco a defesa e a soberania nacionais</mark> ou a integridade do território nacional; II - <mark>prejudicar ou pôr em risco a condução de negociações</mark> ou as relações internacionais do País...', como:'Sigilo grau ultrassecreto 25a, secreto 15a, reservado 5a.'},
+    {id:106, cat:'idoso', num:'Est. Idoso Art. 3º', texto:'É obrigação da família, da comunidade, da sociedade e do Poder Público assegurar ao idoso, com <mark>absoluta prioridade</mark>, a efetivação do direito à vida, à saúde, à alimentação, à educação, à cultura, ao esporte, ao lazer, ao trabalho, à cidadania, à liberdade, à dignidade, ao respeito e à convivência familiar e comunitária.', como:'Absoluta prioridade como ECA.'},
+    {id:107, cat:'idoso', num:'Est. Idoso Art. 3º, §2º', texto:'Dentre os idosos, é assegurada <mark>prioridade especial aos maiores de oitenta anos</mark>, atendendo-se suas necessidades sempre preferencialmente em relação aos demais idosos.', como:'80+ tem superprioridade.'},
+    {id:108, cat:'idoso', num:'Est. Idoso Art. 4º', texto:'Nenhum idoso será objeto de qualquer tipo de <mark>negligência, discriminação, violência, crueldade ou opressão</mark>, e todo atentado aos seus direitos, por ação ou omissão, será punido na forma da lei.', como:'Vedação violências.'},
+    {id:109, cat:'idoso', num:'Est. Idoso Art. 15', texto:'É assegurada a atenção integral à saúde do idoso, por intermédio do Sistema Único de Saúde - SUS, garantindo-lhe o acesso universal e igualitário, em conjunto articulado e contínuo das ações e serviços, para a prevenção, promoção, proteção e recuperação da saúde, incluindo a atenção especial às doenças que afetam preferencialmente os idosos.', como:'Saúde integral SUS.'},
+    {id:110, cat:'idoso', num:'Est. Idoso Art. 19', texto:'Os casos de suspeita ou confirmação de <mark>violência praticada contra idosos</mark> serão objeto de <mark>notificação compulsória</mark> pelos serviços de saúde públicos e privados à autoridade sanitária, bem como serão <mark>obrigatoriamente comunicados</mark> por eles a quaisquer dos seguintes órgãos: I - autoridade policial; II - <mark>Ministério Público</mark>; III - Conselho Municipal do Idoso; IV - Conselho Estadual do Idoso; V - Conselho Nacional do Idoso.', como:'Notificação compulsória violência idoso.'},
+    {id:111, cat:'lc840', num:'LC 840 Art. 180, V', texto:'tratar com <mark>urbanidade</mark> as pessoas;', como:'Dever urbanidade no atendimento SUAS.'},
+    {id:112, cat:'lc840', num:'LC 840 Art. 180, IX', texto:'manter conduta compatível com a <mark>moralidade administrativa</mark>;', como:'Moralidade é dever.'},
+    {id:113, cat:'lc840', num:'LC 840 Art. 187, XIV', texto:'<mark>proceder de forma desidiosa</mark>;', como:'Desídia = proibição. Causa demissão.'},
+    {id:114, cat:'loas', num:'LOAS Art. 6º', texto:'As ações na área de assistência social são <mark>organizadas em sistema descentralizado e participativo</mark>, constituído pelas entidades e organizações de assistência social abrangidas por esta Lei, que articule meios, esforços e recursos, e por um conjunto de instâncias deliberativas compostas pelos diversos setores envolvidos na área.', como:'SUAS = descentralizado e participativo.'},
+    {id:115, cat:'cf', num:'CF Art. 40, §2º', texto:'Os proventos de aposentadoria e as pensões, por ocasião de sua concessão, <mark>não poderão exceder a remuneração</mark> do respectivo servidor, no cargo efetivo em que se deu a aposentadoria ou que serviu de referência para a concessão da pensão.', como:'Teto proventos = remuneração cargo.'},
+    {id:116, cat:'eca', num:'ECA Art. 5º', texto:'Nenhuma criança ou adolescente será objeto de qualquer forma de <mark>negligência, discriminação, exploração, violência, crueldade e opressão</mark>, punido na forma da lei qualquer atentado, por ação ou omissão, aos seus direitos fundamentais.', como:'ECA veda violências.'},
+    {id:117, cat:'lc840', num:'LC 840 Art. 187, XII', texto:'receber <mark>propina, comissão, presente ou vantagem</mark> de qualquer espécie, em razão de suas atribuições;', como:'Corrupção passiva. Demissão + penal.'},
+    {id:118, cat:'lodf', num:'LODF Art. 19, §1º', texto:'A publicidade dos atos, programas, obras, serviços e campanhas dos órgãos públicos deverá ter <mark>caráter educativo, informativo ou de orientação social</mark>, dela <mark>não podendo constar nomes, símbolos ou imagens que caracterizem promoção pessoal</mark> de autoridades ou servidores públicos.', como:'Publicidade não pode ser promoessoal.'},
+    {id:119, cat:'mp', num:'Lei 11.340 Art. 12', texto:'Em todos os casos de violência doméstica e familiar contra a mulher, feito o registro da ocorrência, deverá a autoridade policial adotar, de imediato, os seguintes procedimentos, sem prejuízo daqueles previstos no Código de Processo Penal: III - remeter, no prazo de <mark>48 (quarenta e oito) horas</mark>, expediente apartado ao juiz com o pedido da ofendida, para a concessão de <mark>medidas protetivas de urgência</mark>;', como:'48h para pedir MPU.'},
+    {id:120, cat:'lgpd', num:'LGPD Art. 14', texto:'O tratamento de <mark>dados pessoais de crianças</mark> e de adolescentes deverá ser realizado em seu <mark>melhor interesse</mark>, nos termos deste artigo e da legislação pertinente. §1º O tratamento de dados pessoais de crianças deverá ser realizado com o <mark>consentimento específico</mark> e em destaque dado por <mark>pelo menos um dos pais</mark> ou pelo responsável legal.', como:'Dados criança = consentimento pais + melhor interesse.'}
+  ];
+  if (!Array.isArray(data)) data = [];
+  App.leiseca = data;
+}
+
+function loadQuestions() {
+  let data = [
+    {id:1,tipo:'geral',texto:'A LC 840/2011 estabelece que o servidor estável só perderá o cargo em virtude de:',options:['A) Decisão discricionária do governador.','B) Abandono de cargo por 20 dias.','C) Sentença judicial transitada em julgado ou PAD com ampla defesa.','D) Avaliação de desempenho anual insatisfatória.','E) Exoneração de ofício a qualquer tempo.'],correct:'C',fundamento:'LC 840/2011, art. 41, §1º c/c CF art. 41, §1º: sentença transitada em julgado ou PAD com ampla defesa. Inciso III da CF sobre avaliação de desempenho exige LC ainda não editada.'},
+    {id:2,tipo:'geral',texto:'Segundo art. 37 da CF, a administração pública obedecerá aos princípios de:',options:['A) Legalidade, hierarquia, moralidade, publicidade, eficiência.','B) Legalidade, impessoalidade, moralidade, publicidade, eficiência.','C) Legitimidade, impessoalidade, moralidade, publicidade, eficácia.','D) Legalidade, impessoalidade, motivação, publicidade, eficiência.','E) Legalidade, impessoalidade, moralidade, proporcionalidade, eficiência.'],correct:'B',fundamento:'CF/88, art. 37, caput: LIMPE - Legalidade, Impessoalidade, Moralidade, Publicidade, Eficiência.'},
+    {id:3,tipo:'geral',texto:'A Lei Maria da Penha considera violência psicológica:',options:['A) Apenas ameaça de morte com arma de fogo.','B) Qualquer conduta que cause dano emocional e diminuição da autoestima.','C) Exclusivamente xingamentos proferidos em público.','D) Somente isolamento social por mais de 30 dias.','E) Apenas chantagem financeira comprovada.'],correct:'B',fundamento:'Lei 11.340/06, art. 7º, II: dano emocional e diminuição da autoestima, perturbação do desenvolvimento, controle por ameaça, humilhação, isolamento, etc.'},
+    {id:4,tipo:'geral',texto:'O prazo para servidor empossado entrar em exercício, segundo LC 840/2011, é:',options:['A) 15 dias improrrogáveis.','B) 30 dias contados da nomeação.','C) 30 dias contados da posse, prorrogável por igual período.','D) 5 dias úteis.','E) 60 dias corridos improrrogáveis.'],correct:'C',fundamento:'LC 840/2011, art. 17: 30 dias da POSSE, prorrogável por igual período mediante requerimento até fim do prazo inicial.'},
+    {id:5,tipo:'geral',texto:'A RIDE foi instituída pela:',options:['A) Lei Ordinária 7.053/2009.','B) Lei Complementar 94/1998.','C) Decreto 6.135/2007.','D) Constituição Federal art. 43.','E) LODF.'],correct:'B',fundamento:'LC 94 de 19/02/1998 criou a RIDE. Decreto 10.770/2021 a regulamenta.'},
+    {id:6,tipo:'geral',texto:'Constitui abandono de cargo na LC 840/2011:',options:['A) Ausência intencional por mais de 15 dias consecutivos.','B) Faltas interpoladas por 60 dias em 12 meses.','C) Ausência intencional por mais de 30 dias consecutivos.','D) Faltas injustificadas por 45 dias.','E) Ausência por 90 dias interpolados.'],correct:'C',fundamento:'LC 840/2011, art. 204: ausência intencional por mais de 30 dias CONSECUTIVOS. Item B é inassiduidade habitual art. 205.'},
+    {id:7,tipo:'geral',texto:'É vedado ao servidor público, conforme LC 840/2011 art. 187:',options:['A) Exercer direito de greve.','B) Ser sócio cotista de empresa privada.','C) Participar de gerência de sociedade privada, salvo em licença.','D) Exercer mandato eletivo de vereador.','E) Acumular cargo de professor com outro técnico.'],correct:'C',fundamento:'LC 840/2011, art. 187, X: proibido participar de gerência, salvo em licença para tratar interesses particulares e observada LCOI.'},
+    {id:8,tipo:'geral',texto:'A Lei 14.621/2023 - Lei Lucas torna obrigatória:',options:['A) Presença de médico em toda escola pública.','B) Capacitação em primeiros socorros de professores da educação básica.','C) Instalação de desfibrilador em órgãos públicos.','D) Curso de defesa pessoal para servidoras.','E) Contratação de socorristas em repartições.'],correct:'B',fundamento:'Lei 14.621/23 alterou LDB: capacitação obrigatória em noções básicas primeiros socorros para professores e funcionários educação básica.'},
+    {id:9,tipo:'geral',texto:'No art. 5º, XXXIII da CF, o direito à informação é ressalvado quando o sigilo for imprescindível à:',options:['A) Conveniência administrativa.','B) Organização do serviço.','C) Segurança da sociedade e do Estado.','D) Eficiência do atendimento.','E) Hierarquia funcional.'],correct:'C',fundamento:'CF art. 5º, XXXIII: ressalvado sigilo imprescindível à segurança da sociedade e do Estado - base da LAI.'},
+    {id:10,tipo:'geral',texto:'A Lei 7.484/2024 do DF trata de:',options:['A) Crimes contra a administração pública.','B) Violência institucional contra mulheres em serviços públicos.','C) Criação de delegacias especializadas.','D) Substituição da Lei Maria da Penha no DF.','E) Regulamentação atendimento hospitalar exclusivo.'],correct:'B',fundamento:'Lei 7.484/24 DF: dispõe sobre prevenção e enfrentamento à violência institucional contra mulheres nos serviços públicos do DF.'},
+    {id:11,tipo:'geral',texto:'Consoante art. 41 CF, servidor estável perderá cargo mediante:',options:['A) Avaliação anual por comissão.','B) Procedimento de avaliação periódica de desempenho - LC, com ampla defesa.','C) Decisão do chefe imediato.','D) Apenas processo judicial.','E) Exoneração ad nutum.'],correct:'B',fundamento:'CF art. 41, §1º, III: avaliação periódica desempenho, lei complementar, ampla defesa. Incisos I e II são sentença e PAD.'},
+    {id:12,tipo:'geral',texto:'NÃO é medida protetiva urgência Lei Maria da Penha:',options:['A) Suspensão porte de armas do agressor.','B) Afastamento do lar.','C) Proibição contato com ofendida.','D) Prisão preventiva automática.','E) Alimentos provisionais.'],correct:'D',fundamento:'Lei 11.340/06, art. 22. Prisão preventiva não é automática, depende requisitos CPP art. 312.'},
+    {id:13,tipo:'geral',texto:'Princípio da publicidade art. 37 CF exige:',options:['A) Publicação de tudo em diário oficial.','B) Transparência como regra, sigilo como exceção legal.','C) Divulgação apenas atos normativos.','D) Publicidade licitações acima R$ 1 milhão.','E) Sigilo como regra geral.'],correct:'B',fundamento:'Publicidade = transparência regra. Sigilo só nos casos da lei - ex: segurança, intimidade.'},
+    {id:14,tipo:'geral',texto:'Interpretação: "Embora chovesse, o servidor compareceu". Oração subordinada expressa:',options:['A) Causa.','B) Consequência.','C) Concessão.','D) Condição.','E) Conformidade.'],correct:'C',fundamento:'"Embora" = conjunção concessiva. Indica fato contrário que não impede realização da ação principal.'},
+    {id:15,tipo:'geral',texto:'Crase: Assinale correto:',options:['A) Vou à Paris nas férias.','B) Entregue o documento à diretora.','C) Refiro-me à pessoas ausentes.','D) Chegamos à uma hora.','E) Agradeço à todos.'],correct:'B',fundamento:'À diretora: vou AO diretor → vou À diretora. A: Paris não admite artigo - vou a Paris. C: pessoas indeterminado. D: uma = indefinido. E: todos = masculino.'},
+    {id:16,tipo:'especifico',texto:'LOAS: Assistência social é:',options:['A) Política de seguridade social contributiva.','B) Direito do cidadão e dever do Estado, política não contributiva.','C) Benefício previdenciário.','D) Direito apenas de trabalhadores formais.','E) Política exclusiva de transferência de renda.'],correct:'B',fundamento:'Lei 8.742/93, art. 1º: direito do cidadão, dever do Estado, política NÃO contributiva, provê mínimos sociais.'},
+    {id:17,tipo:'especifico',texto:'BPC é devido a:',options:['A) Idoso 60 anos e PcD com contribuição.','B) Idoso 65 anos ou PcD, renda per capita inferior 1/4 SM.','C) Qualquer idoso sem renda.','D) PcD com renda até 1/2 SM.','E) Idoso 60 anos sem família.'],correct:'B',fundamento:'Lei 8.742/93, art. 20: idoso 65+ ou PcD, renda per capita < 1/4 SM, não possui meios nem família.'},
+    {id:18,tipo:'especifico',texto:'CRAS é unidade de:',options:['A) Proteção especial alta complexidade.','B) Proteção social básica, porta de entrada SUAS.','C) Atendimento exclusivo PcD.','D) Gestão estadual.','E) Acolhimento institucional.'],correct:'B',fundamento:'NOB/SUAS 2012: CRAS = proteção básica, porta de entrada, território até 5.000 famílias, vulnerabilidade social.'},
+    {id:19,tipo:'especifico',texto:'PAIF é ofertado:',options:['A) Exclusivamente no CREAS.','B) Necessariamente no CRAS.','C) Em abrigo institucional.','D) Por entidades sem parceria.','E) Apenas para descumprimento condicionalidades.'],correct:'B',fundamento:'Tipificação Nacional Res. CNAS 109/09: PAIF é serviço proteção básica, oferta obrigatória no CRAS.'},
+    {id:20,tipo:'especifico',texto:'ECA: Considera-se criança pessoa até:',options:['A) 10 anos incompletos.','B) 12 anos incompletos.','C) 14 anos incompletos.','D) 16 anos incompletos.','E) 18 anos incompletos.'],correct:'B',fundamento:'Lei 8.069/90, art. 2º: criança até 12 anos incompletos. Adolescente 12-18.'},
+    {id:21,tipo:'especifico',texto:'Estatuto do Idoso assegura prioridade especial aos maiores de:',options:['A) 60 anos.','B) 65 anos.','C) 70 anos.','D) 75 anos.','E) 80 anos.'],correct:'E',fundamento:'Lei 10.741/03, art. 3º, §2º: prioridade especial aos maiores de 80 anos sobre demais idosos.'},
+    {id:22,tipo:'especifico',texto:'Estatuto PcD: Avaliação da deficiência será:',options:['A) Uniprofissional por médico.','B) Biopsicossocial por equipe multiprofissional.','C) Exclusivamente pericial INSS.','D) Apenas por psicólogo.','E) Dispensada com laudo particular.'],correct:'B',fundamento:'Lei 13.146/15, art. 2º, §1º: biopsicossocial, equipe multiprofissional e interdisciplinar.'},
+    {id:23,tipo:'especifico',texto:'CadÚnico identifica famílias com renda per capita:',options:['A) Até 1 salário mínimo.','B) Até 1/2 salário mínimo ou total até 3 SM.','C) Até 1/4 salário mínimo.','D) Qualquer renda.','E) Apenas extrema pobreza.'],correct:'B',fundamento:'Decreto 6.135/07, art. 4º: até 1/2 SM per capita ou até 3 SM totais.'},
+    {id:24,tipo:'especifico',texto:'Cartão Prato Cheio Lei 6.938/21 DF:',options:['A) R$ 150 mensais fixos.','B) R$ 250 até 4 membros, R$ 350 para 5+.','C) R$ 200 fixos.','D) R$ 600 bimestrais.','E) R$ 400 todos.'],correct:'B',fundamento:'Lei DF 6.938/21: R$ 250 até 4; R$ 350 para 5 ou mais membros.'},
+    {id:25,tipo:'especifico',texto:'PAEFI é ofertado no:',options:['A) CRAS - proteção básica.','B) CREAS - proteção especial média.','C) Centro POP.','D) Conselho Tutelar.','E) Abrigo.'],correct:'B',fundamento:'Tipificação Nacional: PAEFI = Serviço Proteção Especial Média Complexidade, CREAS.'},
+    {id:26,tipo:'especifico',texto:'CF 203: Assistência social será prestada independentemente de:',options:['A) Cadastro CadÚnico.','B) Contribuição à seguridade social.','C) Residência município.','D) Encaminhamento CRAS.','E) Avaliação social.'],correct:'B',fundamento:'CF art. 203: independentemente de contribuição à seguridade social.'},
+    {id:27,tipo:'especifico',texto:'LGPD: Dado pessoal sensível é sobre:',options:['A) Nome e CPF.','B) Endereço.','C) Origem racial, religião, saúde, vida sexual.','D) Telefone e email.','E) Profissão e escolaridade.'],correct:'C',fundamento:'Lei 13.709/18, art. 5º, II: racial, religiosa, política, sindicato, saúde, sexual, genético, biométrico.'},
+    {id:28,tipo:'especifico',texto:'Sigilo do Prontuário SUAS é regulado pela:',options:['A) LAI exclusivamente.','B) Resolução CNAS 33/2011.','C) LGPD apenas.','D) Código Ética Assistente Social só.','E) Decreto 6.135/07.'],correct:'B',fundamento:'Res. CNAS 33/2011: informações Prontuário SUAS são sigilosas, acesso restrito profissionais SUAS.'},
+    {id:29,tipo:'especifico',texto:'DF Social Lei 7.371/23 destina-se a famílias:',options:['A) Renda per capita até 1 SM.','B) Em vulnerabilidade social inscritas CadÚnico.','C) Apenas com idosos/PcD.','D) Beneficiárias BPC só.','E) Com crianças 0-6 anos só.'],correct:'B',fundamento:'Lei 7.371/23: programa transferência renda famílias vulnerabilidade social, CadÚnico.'},
+    {id:30,tipo:'especifico',texto:'Conselho Tutelar é composto por:',options:['A) 3 membros eleitos 3 anos.','B) 5 membros eleitos mandato 4 anos, recondução permitida.','C) 7 membros nomeados prefeito.','D) Profissionais concursados.','E) MP e Defensoria.'],correct:'B',fundamento:'Lei 8.069/90, art. 132: mínimo 1 por Município, 5 membros, população escolhe, 4 anos, recondução permitida.'},
+    {id:31,tipo:'especifico',texto:'LAI: Prazo resposta pedido informação:',options:['A) 5 dias prorrogável 5.','B) 10 dias improrrogável.','C) 20 dias prorrogável por 10 com justificativa.','D) 30 dias prorrogável 30.','E) 48h.'],correct:'C',fundamento:'Lei 12.527/11, art. 11: 20 dias, prorrogável por 10, justificado.'},
+    {id:32,tipo:'especifico',texto:'Ato administrativo com vício de competência não exclusiva é:',options:['A) Nulo insanável.','B) Anulável e convalidável.','C) Inexistente.','D) Irrevogável.','E) Inexequível.'],correct:'B',fundamento:'Teoria Atos Adm: vício competência não exclusiva = sanável por convalidação/ratificação.'},
+    {id:33,tipo:'especifico',texto:'Lei 4.320/64: É despesa de capital:',options:['A) Pessoal e encargos.','B) Material consumo.','C) Investimentos, inversões financeiras, transferências capital.','D) Serviços terceiros.','E) Juros dívida.'],correct:'C',fundamento:'Lei 4.320/64, art. 12: despesa capital = investimentos + inversões + transferências capital.'},
+    {id:34,tipo:'especifico',texto:'CF art. 40: Proventos aposentadoria não podem exceder:',options:['A) Remuneração do servidor no cargo efetivo.','B) Teto do RGPS sempre.','C) 70% última remuneração.','D) Média 80% maiores contribuições.','E) O dobro do salário mínimo.'],correct:'A',fundamento:'CF art. 40, §2º: proventos não excedem remuneração cargo efetivo aposentado.'},
+    {id:35,tipo:'especifico',texto:'CPC: Tutela urgência exige:',options:['A) Só fumus boni iuris.','B) Só periculum in mora.','C) Probabilidade direito + perigo dano/risco resultado útil.','D) Sentença transitada.','E) Aceite réu.'],correct:'C',fundamento:'CPC art. 300: probabilidade direito + perigo dano ou risco resultado útil processo.'},
+    {id:36,tipo:'especifico',texto:'Decreto 7.053/09 Pop Rua tem princípio:',options:['A) Internação compulsória.','B) Respeito dignidade pessoa humana.','C) Atendimento só abrigos.','D) Cadastro obrigatório saúde.','E) Remoção centros urbanos.'],correct:'B',fundamento:'Decreto 7.053/09, art. 5º: respeito dignidade, direito convivência familiar, valorização vida e cidadania.'},
+    {id:37,tipo:'especifico',texto:'CF art. 37, §6º: Responsabilidade civil Estado é:',options:['A) Subjetiva culpa.','B) Objetiva - risco administrativo.','C) Subsidiária servidor.','D) Inexistente ato lícito.','E) Solidária contratados sempre.'],correct:'B',fundamento:'CF 37, §6º: pessoas jurídicas direito público/privado serv. públicos respondem danos agentes, direito regresso dolo/culpa - objetiva.'},
+    {id:38,tipo:'especifico',texto:'LOAS: Benefícios eventuais destinam-se a:',options:['A) Renda superior 3 SM.','B) Nascimento, morte, vulnerabilidade temporária, calamidade.','C) Só desemprego.','D) Beneficiários BPC só.','E) Município emergência só.'],correct:'B',fundamento:'Lei 8.742/93, art. 22: nascimento, morte, vulnerabilidade temporária, calamidade pública.'},
+    {id:39,tipo:'especifico',texto:'Lei 8.429/92 Improbidade, Lei 14.230/21 exige:',options:['A) Culpa qualquer modalidade.','B) Dolo específico - vontade livre e consciente resultado ilícito.','C) Presunção má-fé.','D) Dano erário obrigatório.','E) Enriquecimento ilícito só.'],correct:'B',fundamento:'Lei 8.429/92, art. 1º, §2º redação 14.230/21: dolo = vontade livre e consciente alcançar resultado ilícito. Culpa afastada.'},
+    {id:40,tipo:'especifico',texto:'CC: União Estável reconhece quando:',options:['A) Convivência pública, contínua e duradoura, objetivo constituir família.','B) Coabitação 5 anos mínimo.','C) Dependência econômica obrigatória.','D) Contrato cartório.','E) Filhos comum obrigatórios.'],correct:'A',fundamento:'CC art. 1.723: convivência pública, contínua, duradoura, objetivo constituição família.'},
+    {id:41,tipo:'especifico',texto:'LRF: Despesa pessoal Executivo DF não exceder:',options:['A) 40% RCL.','B) 49% RCL.','C) 50% RCL.','D) 54% RCL.','E) 60% RCL.'],correct:'B',fundamento:'LC 101/00, art. 20: DF acumula estadual/municipal = 49% Executivo + 6% Legislativo.'},
+    {id:42,tipo:'especifico',texto:'SGDCA se estrutura em eixos:',options:['A) Só CT.','B) Promoção, defesa, controle social.','C) Só Ministério Público.','D) Judiciário e Executivo.','E) Organizações internacionais.'],correct:'B',fundamento:'Res. CONANDA 113/06: SGDCA = promoção + defesa + controle social direitos.'},
+    {id:43,tipo:'especifico',texto:'LGPD: Tratamento dados crianças/adolescentes:',options:['A) Livre sem consentimento.','B) Consentimento específico de um dos pais ou responsável.','C) Só Conselho Tutelar.','D) Autorização judicial sempre.','E) Vedado totalmente.'],correct:'B',fundamento:'Lei 13.709/18, art. 14, §1º: melhor interesse + consentimento específico um dos pais/responsável.'},
+    {id:44,tipo:'especifico',texto:'Tipificação Nacional: Alta Complexidade inclui:',options:['A) PAIF.','B) SCFV.','C) PAEFI.','D) Acolhimento Institucional.','E) Abordagem Social.'],correct:'D',fundamento:'Res. CNAS 109/09: Alta = Acolhimento Inst., Casa-Lar, República, Família Acolhedora, Emergência.'},
+    {id:45,tipo:'especifico',texto:'CF 204: Ações assistencial social organizadas com base em:',options:['A) Centralização político-administrativa.','B) Descentralização político-administrativa e participação popular.','C) Exclusividade União.','D) Gestão privada prioritária.','E) Contribuição obrigatória.'],correct:'B',fundamento:'CF 204, I e II: descentralização e participação popular via organizações representativas.'},
+    {id:46,tipo:'especifico',texto:'Especialista Direito SEDES-DF NÃO compete:',options:['A) Emitir pareceres jurídicos.','B) Realizar visita domiciliar para conceder BPC.','C) Orientar gestores.','D) Propor normas.','E) Representar judicialmente com procuração.'],correct:'B',fundamento:'Edital: atribuições = assessoria jurídica, pareceres, orientação, normas, representação. Visita domiciliar = assistente social/técnico.'},
+    {id:47,tipo:'especifico',texto:'CF 5º, LV assegura em PAD:',options:['A) Sigilo como regra.','B) Contraditório e ampla defesa.','C) Gratuidade automática.','D) Julgamento juiz togado só.','E) Recurso ofício obrigatório.'],correct:'B',fundamento:'CF 5º, LV: litigantes processo judicial/administrativo e acusados têm contraditório e ampla defesa.'},
+    {id:48,tipo:'especifico',texto:'Benefício eventual calamidade será concedido:',options:['A) Só beneficiários BPC.','B) Decreto emergência + avaliação social, independe renda.','C) Só em dinheiro.','D) Após 30 dias evento.','E) 1x ano limite.'],correct:'B',fundamento:'Decreto 6.307/07, art. 22: calamidade = emergência/estado calamidade, sobrevivência/reconstrução autonomia, sem exigência renda per capita.'},
+    {id:49,tipo:'especifico',texto:'CC: Incapacidade relativa cessa aos 18 anos, ou antes por:',options:['A) 16 anos completos.','B) Emancipação, casamento, emprego público, colação grau, estabelecimento comercial.','C) Só 21 anos.','D) Casamento aos 14.','E) Nunca para PcD.'],correct:'B',fundamento:'CC art. 5º, parágrafo único: emancipação pais/sentença, casamento, emprego público efetivo, colação grau superior, estabelecimento civil/comercial economia própria.'},
+    {id:50,tipo:'especifico',texto:'Parecer jurídico SEDES deve observar LGPD. Divulgar dados usuário sem base legal:',options:['A) Permitido se interesse público.','B) Vedado - viola sigilo art. 7º LGPD e Res. CNAS 33/11.','C) Permitido para estatística.','D) Permitido se anônimo sempre.','E) Permitido órgão público qualquer.'],correct:'B',fundamento:'LGPD art. 7º + Res. CNAS 33/11: dados Prontuário SUAS sigilosos. Compartilhamento exige base legal específica, consentimento ou ordem judicial.'},
+    {id:51,tipo:'especifico',texto:'Família em vulnerabilidade temporária por desemprego do provedor. CRAS pode conceder:',options:['A) BPC por 6 meses.','B) Benefício eventual vulnerabilidade temporária - LOAS art. 22.','C) Bolsa Família imediatamente.','D) Aposentadoria por idade.','E) Auxílio-doença.'],correct:'B',fundamento:'Lei 8.742/93, art. 22: benefício eventual para vulnerabilidade temporária. BPC exige idoso 65+ ou PcD. Bolsa Família tem fila. Aposentadoria/Auxílio = INSS.'},
+    {id:52,tipo:'especifico',texto:'CREAS recebe denúncia violência contra idoso pelo filho. Medida imediata:',options:['A) Abrigo compulsório.','B) Acionar Conselho Idoso e MP, avaliar MPU Lei 11.340/06 pode aplicar a idoso, incluir PAEFI.','C) Arquivar sem provas.','D) Apenas orientar retornar.','E) Encaminhar CRAS.'],correct:'B',fundamento:'Est. Idoso art. 19 + Lei 10.741/03: comunicação obrigatória MP/Conselho. Lei 11.340/06 aplica-se a idosa. PAEFI é serviço CREAS.'},
+    {id:53,tipo:'especifico',texto:'CadÚnico: Atualização cadastral deve ocorrer:',options:['A) Nunca, cadastro vitalício.','B) A cada 2 anos ou quando alteração composição/renda/endereço.','C) Só quando convocado.','D) Anualmente obrigatório todos.','E) A cada 5 anos.'],correct:'B',fundamento:'Decreto 6.135/07: atualização até 24 meses ou sempre que houver mudança composição, renda, endereço, escola.'},
+    {id:54,tipo:'especifico',texto:'Advogado do CREAS pode:',options:['A) Representar usuário em ação judicial.','B) Ajuizar ações para MPU mulher vítima violência.','C) Orientar juridicamente, elaborar pareceres, NOT articular Defensoria/MP.','D) Realizar perícia social.','E) Conceder benefícios.'],correct:'C',fundamento:'Tipificação: advogado CREAS = orientação jurídica, pareceres, articulação rede. Ajuizamento = Defensoria. Perícia = assistente social.'},
+    {id:55,tipo:'especifico',texto:'Lei 7.484/24 DF: Violência institucional é:',options:['A) Só agressão física servidor.','B) Ação/omissão agentes públicos que cause dano à mulher vítima nos serviços, por revitimização, culpabilização.','C) Apenas descaso.','D) Só em delegacias.','E) Exclusiva do Judiciário.'],correct:'B',fundamento:'Lei 7.484/24 DF: violência institucional = ação/omissão que cause dano por constrangimento, revitimização, culpabilização, descredibilização relato.'},
+    {id:56,tipo:'especifico',texto:'Especialista Direito SEDES recebe processo de PAD contra servidor CRAS por negar benefício eventual sem motivação. Parecer deve:',options:['A) Arquivar: servidor tem discricionariedade.','B) Sugerir demissão imediata.','C) Apontar violação art. 180 IV LC 840 - cumprir ordem exceto ilegal, art. 50 Lei 9.784 - motivação, e art. 22 LOAS. Sugerir PAD.','D) Conceder benefício diretamente.','E) Remeter TCDF.'],correct:'C',fundamento:'LC 840 art. 180 IV e XI; Lei 9.784/99 art. 50 exige motivação; LOAS art. 22 veda negativa arbitrária. Negar sem motivar = infração disciplinar.'},
+    {id:57,tipo:'especifico',texto:'MP requisita à SEDES dados de 500 famílias CadÚnico para "fiscalização rotineira". LGPD:',options:['A) Fornecer tudo: MP tem poder ilimitado.','B) Negar totalmente: sigilo absoluto.','C) Fornecer só dados mínimos necessários ao objeto específico IC, com termo sigilo - art. 7º II e III, 11 LGPD.','D) Fornecer, mas cobrar taxa.','E) Fornecer anônimo sempre.'],correct:'C',fundamento:'LGPD arts. 6º III necessidade, 7º II/III bases legais, 11 dados sensíveis. "Fiscalização rotineira" é genérico - exigir objeto específico IC.'},
+    {id:58,tipo:'especifico',texto:'Servidor SEDES participa de gerência de ONG parceira. LC 840/2011:',options:['A) Permitido, é terceiro setor.','B) Proibido art. 187 X, salvo licença, mesmo ONG.','C) Permitido se voluntário.','D) Permitido se sem remuneração.','E) Permitido se fora horário.'],correct:'B',fundamento:'LC 840 art. 187, X: proibido gerência sociedade privada, personificada ou não. ONG = pessoa jurídica privada. Só pode em licença.'},
+    {id:59,tipo:'especifico',texto:'Benefício eventual auxílio-natalidade PODE ser cumulado com:',options:['A) BPC.','B) Bolsa Família.','C) Aposentadoria.','D) Seguro-desemprego.','E) Todos acima.'],correct:'B',fundamento:'Decreto 6.307/07 art. 9º veda condicionar eventual a outro benefício. Pode cumular Bolsa Família. BPC não pode acumular c/ outro benefício Seguridade, mas eventual não é Seguridade contributiva. Aposentadoria/Seguro = previdência, não impede eventual.'},
+    {id:60,tipo:'especifico',texto:'Usuária CREAS relata que CRAS negou inserir no CadÚnico pois "não tem filho". Orientação:',options:['A) Correto: CadÚnico só família com criança.','B) Errado: CadÚnico é para família baixa renda, com ou sem filhos - Decreto 6.135/07.','C) Correto: prioriza famílias numerosas.','D) Encaminhar Defensoria.','E) Fazer BO.'],correct:'B',fundamento:'Decreto 6.135/07 art. 4º: famílias baixa renda até 1/2 SM per capita, independentemente composição. Pessoa só também cadastra.'},
+    {id:61,tipo:'especifico',texto:'SCFV - Serviço Convivência é ofertado:',options:['A) CREAS para violação direitos.','B) CRAS, proteção básica, grupos etários.','C) Abrigo.','D) Conselho Tutelar.','E) CadÚnico.'],correct:'B',fundamento:'Tipificação: SCFV = proteção básica, CRAS, grupos crianças, adolescentes, idosos, intergeracionais.'},
+    {id:62,tipo:'especifico',texto:'MSE em meio aberto é acompanhada:',options:['A) CRAS - PAIF.','B) CREAS - Serviço MSE.','C) Conselho Tutelar.','D) Vara Infância.','E) Abrigo.'],correct:'B',fundamento:'Tipificação + ECA: MSE Liberdade Assistida e PSC = CREAS, Serviço MSE.'},
+    {id:63,tipo:'especifico',texto:'República é serviço:',options:['A) Básica CRAS.','B) Média CREAS.','C) Alta complexidade - acolhimento adultos independentes.','D) Saúde.','E) Educação.'],correct:'C',fundamento:'Tipificação: República = alta complexidade, adultos 18-59 em processo saída rua, autonomia.'},
+    {id:64,tipo:'especifico',texto:'Família Acolhedora difere Abrigo pois:',options:['A) É só para idosos.','B) Acolhe em família cadastrada, não instituição.','C) É mais caro.','D) Não tem equipe técnica.','E) É permanente.'],correct:'B',fundamento:'Tipificação: Família Acolhedora = acolhimento em residência de famílias cadastradas, selecionadas, capacitadas. Abrigo = institucional.'},
+    {id:65,tipo:'especifico',texto:'Abordagem Social CREAS visa:',options:['A) Internar compulsoriamente.','B) Identificar, abordar e atender pessoas em situação de rua, trabalho infantil, identificando necessidades e inserindo rede.','C) Só distribuir alimento.','D) Cadastrar multas.','E) Remover centros.'],correct:'B',fundamento:'Tipificação: Abordagem Social = identificar, abordar, atender, encaminhar pessoas rua/trabalho infantil e outras vulnerabilidades.'},
+    {id:66,tipo:'especifico',texto:'Vigilância Socioassistencial é:',options:['A) Polícia no CRAS.','B) Função SUAS: produzir, sistematizar informações territorializadas sobre riscos, vulnerabilidades, demanda e oferta serviços.','C) Só fiscalização entidades.','D) Controle ponto servidores.','E) Câmera segurança.'],correct:'B',fundamento:'NOB/SUAS 2012: Vigilância = função SUAS, produz info riscos/vulnerabilidades/demanda para planejamento.'},
+    {id:67,tipo:'especifico',texto:'Controle Social SUAS se dá por:',options:['A) Só Ministério Público.','B) Conselhos de Assistência Social - CNAS, CEAS, CMAS, com participação sociedade civil paritária.','C) TCU.','D) Servidores apenas.','E) Ouvidoria.'],correct:'B',fundamento:'LOAS art. 16: CNAS, CEAS, CMAS paritários governo/sociedade civil.'},
+    {id:68,tipo:'especifico',texto:'Financiamento SUAS "fundo a fundo" significa:',options:['A) Repasse geral sem destinação.','B) Transferência regular e automática de recursos do FNAS para fundos estaduais/municipais.','C) Convênio específico cada projeto.','D) Só emenda parlamentar.','E) Empréstimo.'],correct:'B',fundamento:'NOB/SUAS: fundo a fundo = repasse regular/automático FNAS→FEAS/FMAS, sem convênio.'},
+    {id:69,tipo:'especifico',texto:'Empresa doa cesta básica ao CRAS. Servidor pode receber para si?',options:['A) Sim, se autorizar chefia.','B) Não. LC 840 art. 187 XI veda receber propina, comissão, presente, vantagem em razão cargo.','C) Sim, se valor baixo.','D) Sim, se dividir equipe.','E) Sim, fim ano.'],correct:'B',fundamento:'LC 840 art. 187, XI: proibido aceitar presente/vantagem em razão cargo - PAD com pena demissão.'},
+    {id:70,tipo:'especifico',texto:'Servidor estável reprovado 2x avaliação desempenho:',options:['A) Exoneração imediata.','B) PAD especial - CF 41 §1º III, com ampla defesa. Se mantida insuficiência, exoneração.','C) Aposentadoria compulsória.','D) Readaptação automática.','E) Não perde cargo nunca.'],correct:'B',fundamento:'CF 41, §1º, III: perder cargo por avaliação periódica desempenho, LC, ampla defesa. Obs: LC federal não editada, mas tese existe.'},
+    {id:71,tipo:'especifico',texto:'Usuário BF bloqueado por renda. Família alega erro CadÚnico. CRAS deve:',options:['A) Negar: sistema é automático.','B) Atualizar CadÚnico, solicitar desbloqueio via SIBEC, acompanhar.','C) Conceder BPC.','D) Encaminhar INSS.','E) Arquivar.'],correct:'B',fundamento:'Decreto 6.135/07: atualização CadÚnico corrige renda. SIBEC reavalia bloqueio. CRAS gestão CadÚnico.'},
+    {id:72,tipo:'especifico',texto:'Idoso 80 anos no CRAS. Prioridade atendimento é:',options:['A) Igual 60+.','B) Prioridade absoluta art. 3º ECA.','C) Prioridade especial art. 3º §2º Est. Idoso - 80+ tem preferência sobre demais idosos.','D) Fila normal.','E) Só urgência.'],correct:'C',fundamento:'Lei 10.741/03, art. 3º, §2º: 80+ prioridade especial sobre 60-79.'},
+    {id:73,tipo:'especifico',texto:'PcD BPC iniciou trabalho formal. Benefício:',options:['A) Cancelado imediatamente.','B) Suspenso: pode retomar se deixar trabalho - Lei 8.742 art. 21-A.','C) Mantido integral.','D) Convertido aposentadoria.','E) Reduzido 50%.'],correct:'B',fundamento:'LOAS art. 21-A: BPC suspende quando PcD exerce atividade remunerada. Cessada atividade, retoma sem nova avaliação.'},
+    {id:74,tipo:'especifico',texto:'CREAS atende adolescente 16 anos grávida expulsa casa. Medida:',options:['A) Abrigo adultos.','B) Acolhimento Institucional ECA art. 101 VII ou Família Acolhedora. Incluir PAEFI. Acionar CT e MP.','C) Entregar pai criança.','D) CRAS PAIF só.','E) Nada.'],correct:'B',fundamento:'ECA art. 98, 101 VII: acolhimento provisório. Tipificação: acolhimento institucional ou família acolhedora. PAEFI obrigatório CREAS.'},
+    {id:75,tipo:'especifico',texto:'Lei 14.601/23 Bolsa Família: Condicionalidade descumprida resulta:',options:['A) Cancelamento imediato.','B) Advertência, bloqueio, suspensão, cancelamento - progressivo. CRAS acompanha.','C) Multa família.','D) Prisão pais.','E) Nada.'],correct:'B',fundamento:'Lei 14.601/23: descumprimento = advertência → bloqueio 1º → suspensão 2º → cancelamento. CRAS acompanha descumprimento.'},
+    {id:76,tipo:'especifico',texto:'Atribuições cargo 403 incluem elaborar:',options:['A) Laudo social.','B) Parecer jurídico sobre concessão benefícios.','C) Visita domiciliar.','D) Plano Individual Atendimento.','E) Cartão Prato Cheio.'],correct:'B',fundamento:'Edital: elaborar pareceres jurídicos sobre competência SEDES. Laudo social = assistente. Visita = técnico. PIA = técnico.'},
+    {id:77,tipo:'especifico',texto:'Sigilo Prontuário SUAS cede para:',options:['A) Qualquer servidor.','B) Ordem judicial ou MP com motivação - Res. CNAS 33/11 e LGPD art. 7º II.','C) Imprensa.','D) Empresa pesquisa.','E) Vereador.'],correct:'B',fundamento:'Res. CNAS 33/11: sigilo Prontuário. Acesso só profissionais SUAS ou ordem judicial/MP motivada. LGPD base legal II.'},
+    {id:78,tipo:'especifico',texto:'Servidor DF pode acumular cargo professor 20h SEDES + professor 20h SEEDF?',options:['A) Não: 40h total.','B) Sim: art. 37 XVI b CF - professor + técnico/científico, compatibilidade horários. Cargo 403 é técnico.','C) Não: SEDES não é técnico.','D) Só se um for comissão.','E) Só CLT.'],correct:'B',fundamento:'CF 37, XVI, b: professor + técnico/científico. Especialista Direito = cargo técnico. 20+20=40h compatível.'},
+    {id:79,tipo:'especifico',texto:'Penalidade LC 840 para servidor que revela segredo conhecido em razão cargo:',options:['A) Advertência.','B) Suspensão 30 dias.','C) Demissão - art. 202 VI.','D) Multa.','E) Transferência.'],correct:'C',fundamento:'LC 840, art. 202, VI: demissão para revelação segredo do qual se apropriou em razão cargo.'},
+    {id:80,tipo:'especifico',texto:'Prazo prescrição PAD demissão LC 840:',options:['A) 180 dias.','B) 2 anos.','C) 5 anos.','D) 10 anos.','E) Imprescritível.'],correct:'C',fundamento:'LC 840, art. 207, I: ação disciplinar demissão/cassação 5 anos.'},
+    {id:81,tipo:'especifico',texto:'Recondução na LC 840 ocorre quando:',options:['A) Servidor pede voltar cargo anterior.','B) Inabilitado estágio probatório ou reintegração ocupante anterior.','C) Aposenta.','D) Demissão anulada.','E) Transferência.'],correct:'B',fundamento:'LC 840, art. 36: recondução = retorno cargo anterior por inabilitação estágio probatório ou reintegração anterior ocupante.'},
+    {id:82,tipo:'especifico',texto:'Readaptação LC 840:',options:['A) Pena disciplinar.','B) Deslocamento cargo compatível limitação física/mental.','C) Transferência.','D) Aposentadoria.','E) Promoção.'],correct:'B',fundamento:'LC 840, art. 32: readaptação = investidura servidor em cargo atribuições/responsabilidades compatíveis com limitação sofrida.'},
+    {id:83,tipo:'especifico',texto:'Reversão LC 840 é retorno:',options:['A) Aposentado por invalidez quando insubsistente motivos ou interesse adm.','B) Demitido.','C) Exonerado pedido.','D) Falecido.','E) Transferido.'],correct:'A',fundamento:'LC 840, art. 33: reversão = retorno atividade aposentado por invalidez quando junta médica declarar insubsistentes motivos ou no interesse adm.'},
+    {id:84,tipo:'especifico',texto:'Aproveitamento LC 840:',options:['A) Reaproveitamento disponível em cargo igual/superior.','B) Voltar após licenciar.','C) Promo fim carreira.','D) Estágio.','E) Contrato temp.'],correct:'A',fundamento:'LC 840, art. 40: aproveitamento = retorno atividade servidor disponibilidade, em cargo igual remuneração ou superior.'},
+    {id:85,tipo:'especifico',texto:'Substituição LC 840: Substituto assume por:',options:['A) 15 dias sem remuneração.','B) Afastamento/impedimento titular, percebe função gratificada proporcional se >30 dias.','C) Sempre cargo superior.','D) Sem ato formal.','E) Só secretário.'],correct:'B',fundamento:'LC 840, art. 44: substituição automática ou por designação. >30 dias = retribuição função ou diferença subsídio.'},
+    {id:86,tipo:'especifico',texto:'Remoção LC 840 a pedido independe interesse adm quando:',options:['A) Qualquer motivo.','B) Saúde servidor/cônjuge/dependente; acompanhamento cônjuge servidor público deslocado.','C) Promoção.','D) Casamento.','E) Compra imóvel.'],correct:'B',fundamento:'LC 840, art. 47: remoção a pedido independe interesse adm: saúde servidor/cônjuge/dependente OU acompanhar cônjuge servidor deslocado interesse adm.'},
+    {id:87,tipo:'especifico',texto:'Redistribuição LC 840 é:',options:['A) Mudança servidor para outro órgão mesmo Poder, cargos iguais.','B) Promoção.','C) Sanção.','D) Rescisão.','E) Licença.'],correct:'A',fundamento:'LC 840, art. 51: redistribuição = deslocamento servidor com cargo para outro órgão mesmo Poder, observado interesse adm, cargos iguais.'},
+    {id:88,tipo:'especifico',texto:'Vencimento x Remuneração LC 840:',options:['A) Sinônimos.','B) Vencimento = retribuição cargo. Remuneração = vencimento + vantagens permanentes.','C) Vencimento maior.','D) Remuneração só comissionado.','E) Não define.'],correct:'B',fundamento:'LC 840, art. 63: Vencimento = retribuição pecuniária cargo. Art. 64: Remuneração = vencimento + vantagens permanentes.'},
+    {id:89,tipo:'especifico',texto:'Teto remuneração DF LC 840:',options:['A) Subsídio governador.','B) Subsídio prefeito.','C) Deputado Federal.','D) Ministro STF para todos.','E) Não tem.'],correct:'A',fundamento:'LC 840, art. 65 c/c CF 37, XI: teto DF = subsídio mensal Governador. Estados âmbito executivo = Governador; legislativo = Deputado; judiciário = Desembargador.'},
+    {id:90,tipo:'especifico',texto:'Ajuda de custo LC 840:',options:['A) Mensal.','B) Mudar sede interesse serviço, até 3 remunerações.','C) Viagem.','D) Alimentação.','E) Transporte.'],correct:'B',fundamento:'LC 840, art. 71: ajuda custo = compensar despesas instalação servidor mudar sede interesse serviço. 1 a 3 remunerações.'},
+    {id:91,tipo:'especifico',texto:'Licença capacitação LC 840:',options:['A) Inexiste.','B) 3 meses a cada 5 anos efetivo exercício, interesse adm.','C) 1 ano sabático.','D) Só mestrado.','E) Remunerada total sempre.'],correct:'B',fundamento:'LC 840, art. 130: após 5 anos efetivo, servidor pode afastar 3 meses com remuneração para capacitação, interesse adm.'},
+    {id:92,tipo:'especifico',texto:'Licença atividade política LC 840:',options:['A) Sem remuneração sempre.','B) Com remuneração: do registro candidatura até 10 dias após eleição. Sem: entre escolha convenção e registro.','C) Inexiste.','D) Só eleito.','E) 6 meses.'],correct:'B',fundamento:'LC 840, art. 133: sem remuneração = escolha convenção até registro. Com remuneração = registro até 10 dias após eleição.'},
+    {id:93,tipo:'especifico',texto:'Afastamento mandato eletivo LC 840:',options:['A) Perde cargo.','B) Deputado/Senador: afastado, opta remuneração. Prefeito: afasta, opta. Vereador: havendo compatibilidade, acumula, senão afasta e opta.','C) Exonera sempre.','D) Licença prêmio.','E) Só federal.'],correct:'B',fundamento:'LC 840, art. 136: federal/estadual/distrital = afasta e opta. Prefeito = idem. Vereador = compatível acumula, senão afasta e opta.'},
+    {id:94,tipo:'especifico',texto:'Gratificação natalina LC 840:',options:['A) 1/2 remuneração dezembro.','B) 1/12 remuneração por mês exercício, paga dezembro.','C) Salário extra.','D) Abono.','E) Só comissionado.'],correct:'B',fundamento:'LC 840, art. 85: gratificação natalina = 1/12 remuneração a que fizer jus dezembro, por mês exercício ano.'},
+    {id:95,tipo:'especifico',texto:'Férias LC 840 podem ser parceladas em:',options:['A) Não pode.','B) Até 3 etapas, interesse adm.','C) 2x só.','D) 4x.','E) 12x.'],correct:'B',fundamento:'LC 840, art. 102: férias podem ser parceladas até 3 etapas, desde que interesse adm e servidor requeira.'},
+    {id:96,tipo:'especifico',texto:'Serviço extraordinário LC 840:',options:['A) Proibido.','B) Adicional 50% hora normal dias úteis, 100% domingos/feriados.','C) Banco horas só.','D) 20% sempre.','E) Folga só.'],correct:'B',fundamento:'LC 840, art. 78: serviço extra = 50% útil, 100% domingo/feriado sobre hora normal.'},
+    {id:97,tipo:'especifico',texto:'Adicional noturno LC 840:',options:['A) 20% sobre hora diurna, 22h-5h.','B) 25%, 20h-6h.','C) 50%.','D) Inexiste.','E) Só vigia.'],correct:'A',fundamento:'LC 840, art. 80: noturno = 20% hora diurna, serviço 22h-5h.'},
+    {id:98,tipo:'especifico',texto:'Prescrição penal interrompe prescrição adm LC 840?',options:['A) Não.','B) Sim: se fato também crime, prescreve no prazo penal.','C) Só inquérito.','D) Só sentença.','E) Nunca.'],correct:'B',fundamento:'LC 840, art. 207, §2º: infração também crime, prescrição adm = penal.'},
+    {id:99,tipo:'especifico',texto:'Sindicância LC 840 prazo:',options:['A) 15 dias, prorrogável 15.','B) 30 dias, prorrogável 30, pode resultar advertência/suspensão até 30d.','C) 60 dias.','D) 90 dias.','E) 120 dias.'],correct:'B',fundamento:'LC 840, art. 212: sindicância 30 dias prorrogável 30. Pode aplicar advertência ou suspensão até 30 dias.'},
+    {id:100,tipo:'especifico',texto:'PAD LC 840 prazo conclusão:',options:['A) 30 dias.','B) 60 dias, prorrogável igual período, julga 20 dias.','C) 90 dias.','D) 120 dias.','E) 1 ano.'],correct:'B',fundamento:'LC 840, art. 217: PAD 60 dias prorrogável igual. Autoridade julga 20 dias decisão.'}
+  ];
+  if (!Array.isArray(data)) data = [];
+  App.questions = data;
+}
+
+function getSimuladoQuestions() {
+  return App.questions.slice(0, 60);
+}
+
+// ========== UI INITIALIZATION ==========
+function initTabs() {
+  const btns = document.querySelectorAll('.tab-button');
+  btns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      if (btn.disabled) return;
+      if (App.simuladoState.active && btn.dataset.tab !== 'simulado') {
+        alert('⚠️ Você está em modo simulado. Finalize a prova para acessar outras abas.');
+        return;
+      }
+      const tab = btn.dataset.tab;
+      document.querySelectorAll('.tab-button').forEach(b => b.classList.remove('active'));
+      document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+      btn.classList.add('active');
+      const content = document.getElementById(tab);
+      if (content) content.classList.add('active');
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  });
+}
+
+function initDarkMode() {
+  const toggle = document.getElementById('darkModeToggle');
+  if (!toggle) return;
+  const current = localStorage.getItem('theme') || 'light';
+  document.documentElement.setAttribute('data-theme', current);
+  toggle.textContent = current === 'dark' ? '☀️' : '🌙';
+  toggle.addEventListener('click', () => {
+    const theme = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+    document.documentElement.setAttribute('data-theme', theme);
+    localStorage.setItem('theme', theme);
+    toggle.textContent = theme === 'dark' ? '☀️' : '🌙';
+  });
+}
+
+function initSearch() {
+  const searchGlobal = document.getElementById('searchInput');
+  const searchLei = document.getElementById('leisecaSearch');
+  if (searchGlobal) {
+    searchGlobal.addEventListener('input', (e) => {
+      const term = e.target.value.toLowerCase().trim();
+      const cards = document.querySelectorAll('.card, .question-card, .artigo-lei-seca');
+      if (term.length < 2) {
+        cards.forEach(el => el.classList.remove('hidden'));
+        return;
+      }
+      cards.forEach(card => {
+        card.classList.toggle('hidden', !card.textContent.toLowerCase().includes(term));
+      });
+    });
+  }
+  if (searchLei) {
+    searchLei.addEventListener('input', (e) => {
+      const term = e.target.value.toLowerCase().trim();
+      const artigos = document.querySelectorAll('.artigo-lei-seca');
+      artigos.forEach(art => {
+        art.classList.toggle('hidden', term && !art.textContent.toLowerCase().includes(term));
+      });
+    });
+  }
+}
+
+function initProgress() {
+  const cbs = document.querySelectorAll('input[type="checkbox"]:not(.decorado-cb)');
+  cbs.forEach(cb => {
+    cb.addEventListener('change', () => {
+      saveProgress();
+      updateProgress();
+    });
+  });
+  updateProgress();
+}
+
+function saveProgress() {
+  const progress = {};
+  const cbs = document.querySelectorAll('input[type="checkbox"]:not(.decorado-cb)');
+  cbs.forEach(cb => {
+    if (cb.id) progress[cb.id] = cb.checked;
+  });
+  localStorage.setItem('sedes-progress-v2', JSON.stringify(progress));
+}
+
+function loadProgress() {
+  try {
+    const progress = JSON.parse(localStorage.getItem('sedes-progress-v2') || '{}');
+    if (progress && typeof progress === 'object') {
+      Object.keys(progress).forEach(id => {
+        const cb = document.getElementById(id);
+        if (cb) cb.checked = progress[id];
+      });
+    }
+    updateProgress();
+    loadQuestionAnswers();
+    loadDecorados();
+  } catch(e) {
+    console.error('Erro ao carregar progresso:', e);
+  }
+}
+
+function updateProgress() {
+  const checkboxes = document.querySelectorAll('input[type="checkbox"]:not(.decorado-cb)');
+  const arr = Array.from(checkboxes);
+  const checked = arr.filter(cb => cb.checked);
+  const percent = arr.length > 0 ? Math.round((checked.length / arr.length) * 100) : 0;
+  const bar = document.getElementById('globalProgress');
+  const percEl = document.getElementById('progressPercent');
+  const hoursEl = document.getElementById('progressHours');
+  if (bar) bar.style.width = percent + '%';
+  if (percEl) percEl.textContent = percent + '%';
+  const hoursPerCheckbox = App.totalHours / (arr.length || 1);
+  const completedHours = Math.round(checked.length * hoursPerCheckbox);
+  if (hoursEl) hoursEl.textContent = `${completedHours}h / ${App.totalHours}h`;
+}
+
+function initQuestions() {
+  const container = document.getElementById('questionsContainer');
+  if (!container) return;
+  container.innerHTML = '';
+  App.questions.forEach((q, idx) => {
+    const div = document.createElement('div');
+    div.className = 'question-card';
+    div.id = `q${q.id}`;
+    div.dataset.tipo = q.tipo;
+    const opts = Array.isArray(q.options) ? q.options : [];
+    div.innerHTML = `
+      <div class="question-header">
+        <span class="question-number">Questão ${q.id} - ${q.tipo === 'geral' ? '📘 Gerais' : '⚖️ Específicos'}</span>
+        <span class="badge ${q.tipo === 'geral' ? 'badge-primary' : 'badge-danger'}">${idx < 30 ? 'Conhecimentos Gerais' : 'Conhecimentos Específicos'}</span>
+      </div>
+      <div class="question-text">${q.texto}</div>
+      <div class="options">
+        ${opts.map(opt => `
+          <div class="option" data-q="${q.id}" data-a="${opt[0]}">
+            <span class="option-letter">${opt[0]}</span>
+            <span>${opt.substring(3)}</span>
+          </div>
+        `).join('')}
+      </div>
+      <div class="fundamento" id="fund${q.id}">
+        <strong>✅ Gabarito: ${q.correct}</strong><br>
+        <strong>📖 Fundamento:</strong> ${q.fundamento}
+      </div>
+    `;
+    container.appendChild(div);
+  });
+
+  const options = document.querySelectorAll('.option');
+  options.forEach(opt => {
+    opt.addEventListener('click', () => {
+      const qId = opt.dataset.q;
+      const answer = opt.dataset.a;
+      const question = App.questions.find(q => q.id == qId);
+      if (!question) return;
+      const card = document.getElementById(`q${qId}`);
+      if (!card) return;
+      const opts = card.querySelectorAll('.option');
+      opts.forEach(o => o.classList.remove('selected', 'correct', 'wrong'));
+      opt.classList.add('selected');
+      if (answer === question.correct) {
+        opt.classList.add('correct');
+        card.classList.add('answered-correct');
+        card.classList.remove('answered-wrong');
+      } else {
+        opt.classList.add('wrong');
+        card.classList.add('answered-wrong');
+        card.classList.remove('answered-correct');
+        const correctOpt = card.querySelector(`[data-a="${question.correct}"]`);
+        if (correctOpt) correctOpt.classList.add('correct');
+      }
+      const fund = document.getElementById(`fund${qId}`);
+      if (fund) fund.classList.add('show');
+      saveQuestionAnswer(qId, answer);
+    });
+  });
+}
+
+function saveQuestionAnswer(qId, answer) {
+  try {
+    const answers = JSON.parse(localStorage.getItem('sedes-answers-v2') || '{}');
+    answers[qId] = answer;
+    localStorage.setItem('sedes-answers-v2', JSON.stringify(answers));
+  } catch(e) {
+    console.error('Erro ao salvar resposta:', e);
+  }
+}
+
+function loadQuestionAnswers() {
+  try {
+    const answers = JSON.parse(localStorage.getItem('sedes-answers-v2') || '{}');
+    if (answers && typeof answers === 'object') {
+      Object.keys(answers).forEach(qId => {
+        const opt = document.querySelector(`[data-q="${qId}"][data-a="${answers[qId]}"]`);
+        if (opt) opt.click();
+      });
+    }
+  } catch(e) {
+    console.error('Erro ao carregar respostas:', e);
+  }
+}
+
+function initLeisecaRender() {
+  const container = document.getElementById('leisecaContainer');
+  if (!container) return;
+  container.innerHTML = '';
+  App.leiseca.forEach(art => {
+    const div = document.createElement('div');
+    div.className = 'artigo-lei-seca';
+    div.dataset.cat = art.cat;
+    div.innerHTML = `
+      <div class="artigo-lei-seca-header">
+        <span class="artigo-numero">${art.num}</span>
+        <div class="checkbox-wrapper" style="margin: 0;">
+          <input type="checkbox" id="decorado-${art.id}" class="decorado-cb">
+          <label for="decorado-${art.id}">Decorado</label>
+        </div>
+      </div>
+      <p>${art.texto}</p>
+      <p><strong>Como a Quadrix cobra:</strong> ${art.como}</p>
+    `;
+    container.appendChild(div);
+  });
+
+  const filters = document.querySelectorAll('.filter-btn');
+  filters.forEach(btn => {
+    btn.addEventListener('click', () => {
+      filters.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      const filter = btn.dataset.filter;
+      const artigos = document.querySelectorAll('.artigo-lei-seca');
+      artigos.forEach(art => {
+        if (filter === 'todos') {
+          art.classList.remove('hidden');
+        } else if (filter === 'decorados') {
+          const cb = art.querySelector('.decorado-cb');
+          art.classList.toggle('hidden', !cb || !cb.checked);
+        } else {
+          art.classList.toggle('hidden', art.dataset.cat !== filter);
+        }
+      });
+    });
+  });
+
+  const decorados = document.querySelectorAll('.decorado-cb');
+  decorados.forEach(cb => {
+    cb.addEventListener('change', (e) => {
+      const artigo = e.target.closest('.artigo-lei-seca');
+      if (artigo) artigo.classList.toggle('decorado', e.target.checked);
+      saveDecorados();
+    });
+  });
+}
+
+function saveDecorados() {
+  try {
+    const decorados = {};
+    const cbs = document.querySelectorAll('.decorado-cb');
+    cbs.forEach(cb => {
+      decorados[cb.id] = cb.checked;
+    });
+    localStorage.setItem('sedes-decorados', JSON.stringify(decorados));
+  } catch(e) {
+    console.error('Erro ao salvar decorados:', e);
+  }
+}
+
+function loadDecorados() {
+  try {
+    const decorados = JSON.parse(localStorage.getItem('sedes-decorados') || '{}');
+    if (decorados && typeof decorados === 'object') {
+      Object.keys(decorados).forEach(id => {
+        const cb = document.getElementById(id);
+        if (cb) {
+          cb.checked = decorados[id];
+          const art = cb.closest('.artigo-lei-seca');
+          if (art) art.classList.toggle('decorado', decorados[id]);
+        }
+      });
+    }
+  } catch(e) {
+    console.error('Erro ao carregar decorados:', e);
+  }
+}
+
+function initExport() {
+  const btn = document.getElementById('exportBtn');
+  if (!btn) return;
+  btn.addEventListener('click', () => {
+    try {
+      const data = {
+        versao: '2.0 Final',
+        progresso: JSON.parse(localStorage.getItem('sedes-progress-v2') || '{}'),
+        questoes: JSON.parse(localStorage.getItem('sedes-answers-v2') || '{}'),
+        decorados: JSON.parse(localStorage.getItem('sedes-decorados') || '{}'),
+        data: new Date().toISOString()
+      };
+      const blob = new Blob([JSON.stringify(data, null, 2)], { type: 'application/json' });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = `sedes-df-completo-${new Date().toISOString().split('T')[0]}.json`;
+      a.click();
+      URL.revokeObjectURL(url);
+      alert('✅ Progresso completo exportado! Inclui: checklists, questões, 120 artigos decorados.');
+    } catch(e) {
+      alert('❌ Erro ao exportar: ' + e.message);
+    }
+  });
+}
+
+// ========== SIMULADO FUNCTIONS ==========
+function startSimulado() {
+  try {
+    if (!confirm('⚠️ ATENÇÃO: Ao iniciar, você terá 4 HORAS e as outras abas serão bloqueadas. Deseja continuar?')) return;
+    
+    const simuladoQs = getSimuladoQuestions();
+    const discursivaTema = {
+      enunciado: 'Caso SUAS Integrado - Benefício Eventual + Violência + LGPD',
+      texto: `<strong>Estudo de Caso:</strong><br><br>
+        Maria, 32 anos, comparece ao CRAS de Ceilândia solicitando auxílio-aluguel, relatando que foi expulsa de casa pelo companheiro após episódio de violência psicológica e patrimonial. O companheiro controla seu salário, reteve seus documentos pessoais e a proíbe de trabalhar. Ela tem 3 filhos menores (2, 5 e 8 anos) e está desempregada. Não possui renda própria, mas o companheiro recebe R$ 2.500,00/mês.<br><br>
+        O técnico do CRAS nega o benefício alegando que ela "tem renda familiar" e que "benefício eventual não é para separação". Maria procura a SEDES questionando a negativa e solicitando orientação jurídica.<br><br>
+        Paralelamente, o Ministério Público requisita à SEDES, via ofício, acesso aos dados do CadÚnico de Maria para instruir processo de investigação contra o agressor.<br><br>
+        <strong>Com base no caso, responda fundamentadamente:</strong><br>
+        1) A negativa do CRAS foi legal? Fundamente com base no art. 22 da LOAS e no Decreto 6.307/07, abordando vulnerabilidade temporária e cálculo de renda.<br>
+        2) Quais medidas protetivas de urgência da Lei Maria da Penha (Lei 11.340/06) são aplicáveis ao caso e como devem ser requeridas?<br>
+        3) Como o agente da SEDES deve proceder quanto à requisição do MP dos dados do CadÚnico, considerando a LGPD (Lei 13.709/18) e a Resolução CNAS 33/2011?<br>
+        4) Quais benefícios eventuais e serviços do SUAS Maria e seus filhos têm direito? Cite mínimo 3 dispositivos legais.<br>
+        5) Redija orientação técnica-jurídica conclusiva à equipe do CRAS sobre o atendimento humanizado, conforme Lei 7.484/2024 DF.`
+    };
+
+    App.simuladoState.active = true;
+    App.simuladoState.startTime = Date.now();
+    App.simuladoState.answers = {};
+    App.simuladoState.marked = [];
+    App.simuladoState.currentQ = 0;
+    App.simuladoState.discursiva = '';
+    App.simuladoState.simuladoQuestions = simuladoQs;
+    App.simuladoState.discursivaTema = discursivaTema;
+
+    // Bloquear outras abas
+    document.querySelectorAll('.tab-button').forEach(btn => {
+      if (btn.dataset.tab !== 'simulado') {
+        btn.disabled = true;
+      }
+    });
+
+    // Mostrar interface do simulado
+    document.getElementById('simuladoIntro').classList.add('hidden');
+    document.getElementById('simuladoProva').classList.remove('hidden');
+    document.getElementById('simuladoResultado').classList.add('hidden');
+
+    // Renderizar questões
+    renderSimuladoQuestions(simuladoQs);
+    renderCartaoResposta(simuladoQs.length);
+    renderDiscursiva(discursivaTema);
+
+    // Iniciar timer 4h = 240min = 14400s
+    startTimer(4 * 60 * 60);
+
+    // Navegar para aba simulado
+    document.querySelectorAll('.tab-button').forEach(b => b.classList.remove('active'));
+    document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+    document.querySelector('[data-tab="simulado"]').classList.add('active');
+    document.getElementById('simulado').classList.add('active');
+
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  } catch(e) {
+    alert('❌ Erro ao iniciar simulado: ' + e.message);
+    console.error(e);
+  }
+}
+
+function renderSimuladoQuestions(questions) {
+  const container = document.getElementById('simuladoQuestoesContainer');
+  if (!container) return;
+  container.innerHTML = '';
+  
+  questions.forEach((q, idx) => {
+    const div = document.createElement('div');
+    div.className = 'question-card';
+    div.id = `simQ${idx}`;
+    div.innerHTML = `
+      <div class="question-header">
+        <span class="question-number">Questão ${idx + 1} de ${questions.length}</span>
+        <span class="badge badge-primary">${q.disciplina}</span>
+      </div>
+      <div class="question-text">${q.texto}</div>
+      <div class="options">
+        ${q.options.map(opt => `
+          <div class="option" data-qidx="${idx}" data-a="${opt[0]}">
+            <span class="option-letter">${opt[0]}</span>
+            <span>${opt.substring(3)}</span>
+          </div>
+        `).join('')}
+      </div>
+    `;
+    container.appendChild(div);
+  });
+
+  // Event listeners nas opções
+  container.querySelectorAll('.option').forEach(opt => {
+    opt.addEventListener('click', () => {
+      const qidx = parseInt(opt.dataset.qidx);
+      const answer = opt.dataset.a;
+      const card = document.getElementById(`simQ${qidx}`);
+      card.querySelectorAll('.option').forEach(o => o.classList.remove('selected'));
+      opt.classList.add('selected');
+      App.simuladoState.answers[qidx] = answer;
+      updateCartaoResposta();
+    });
+  });
+
+  showQuestion(0);
+}
+
+function renderCartaoResposta(total) {
+  const container = document.getElementById('cartaoResposta');
+  if (!container) return;
+  container.innerHTML = '';
+  for (let i = 0; i < total; i++) {
+    const div = document.createElement('div');
+    div.className = 'cartao-item';
+    div.textContent = i + 1;
+    div.dataset.qidx = i;
+    div.addEventListener('click', () => showQuestion(i));
+    container.appendChild(div);
+  }
+}
+
+function updateCartaoResposta() {
+  const items = document.querySelectorAll('.cartao-item');
+  items.forEach((item, idx) => {
+    item.classList.remove('answered', 'marked', 'current');
+    if (App.simuladoState.answers[idx]) item.classList.add('answered');
+    if (App.simuladoState.marked.includes(idx)) item.classList.add('marked');
+    if (idx === App.simuladoState.currentQ) item.classList.add('current');
+  });
+  document.getElementById('questaoAtual').textContent = `Questão ${App.simuladoState.currentQ + 1} / ${App.simuladoState.simuladoQuestions.length}`;
+}
+
+function showQuestion(idx) {
+  document.querySelectorAll('.question-card').forEach((card, i) => {
+    card.classList.toggle('hidden', i !== idx);
+  });
+  App.simuladoState.currentQ = idx;
+  updateCartaoResposta();
+}
+
+function renderDiscursiva(tema) {
+  document.getElementById('enunciadoDiscursiva').innerHTML = tema.texto;
+}
+
+function toggleMarkReview() {
+  const idx = App.simuladoState.currentQ;
+  const markedIdx = App.simuladoState.marked.indexOf(idx);
+  if (markedIdx > -1) {
+    App.simuladoState.marked.splice(markedIdx, 1);
+  } else {
+    App.simuladoState.marked.push(idx);
+  }
+  updateCartaoResposta();
+}
+
+function startTimer(seconds) {
+  clearInterval(App.simuladoState.timer);
+  let remaining = seconds;
+  const display = document.getElementById('timerDisplay');
+  
+  App.simuladoState.timer = setInterval(() => {
+    remaining--;
+    const h = Math.floor(remaining / 3600);
+    const m = Math.floor((remaining % 3600) / 60);
+    const s = remaining % 60;
+    if (display) {
+      display.textContent = `${String(h).padStart(2, '0')}:${String(m).padStart(2, '0')}:${String(s).padStart(2, '0')}`;
+      if (remaining < 300) display.classList.add('timer-warning'); // últimas 5 min
+    }
+    if (remaining <= 0) {
+      clearInterval(App.simuladoState.timer);
+      alert('⏰ Tempo esgotado! A prova será finalizada automaticamente.');
+      finalizarSimulado();
+    }
+  }, 1000);
+}
+
+function finalizarSimulado() {
+  try {
+    if (!App.simuladoState.active) return;
+    if (!confirm('Deseja realmente finalizar a prova? Você não poderá alterar as respostas depois.')) return;
+
+    clearInterval(App.simuladoState.timer);
+    App.simuladoState.active = false;
+
+    // Calcular resultados
+    let acertos = 0;
+    let erros = 0;
+    let em_branco = 0;
+    const corretas = {};
+    
+    App.simuladoState.simuladoQuestions.forEach((q, idx) => {
+      const resposta = App.simuladoState.answers[idx];
+      corretas[idx] = q.correct;
+      if (!resposta) {
+        em_branco++;
+      } else if (resposta === q.correct) {
+        acertos++;
+      } else {
+        erros++;
+      }
+    });
+
+    const totalQ = App.simuladoState.simuladoQuestions.length;
+    const percentual = ((acertos / totalQ) * 100).toFixed(1);
+    
+    // Mostrar resultado
+    document.getElementById('simuladoProva').classList.add('hidden');
+    document.getElementById('simuladoResultado').classList.remove('hidden');
+    
+    document.getElementById('simuladoResultado').innerHTML = `
+      <div class="result-card">
+        <h2>📊 Resultado do Simulado</h2>
+        <div class="result-score">${acertos}/${totalQ}</div>
+        <p style="font-size: 1.25rem; margin-bottom: 1rem;">
+          <strong>Aproveitamento:</strong> ${percentual}%
+        </p>
+        <div class="stats-grid" style="margin-top: 2rem;">
+          <div class="stat-card" style="background: linear-gradient(135deg, var(--success), #4caf50);">
+            <div class="stat-number">${acertos}</div>
+            <div class="stat-label">Acertos</div>
+          </div>
+          <div class="stat-card" style="background: linear-gradient(135deg, var(--danger), #ef5350);">
+            <div class="stat-number">${erros}</div>
+            <div class="stat-label">Erros</div>
+          </div>
+          <div class="stat-card" style="background: linear-gradient(135deg, var(--warning), #ffa726);">
+            <div class="stat-number">${em_branco}</div>
+            <div class="stat-label">Em Branco</div>
+          </div>
+        </div>
+        <div class="alert alert-info" style="margin-top: 2rem; text-align: left;">
+          <strong>📝 Gabarito Detalhado:</strong><br>
+          ${App.simuladoState.simuladoQuestions.map((q, idx) => {
+            const resp = App.simuladoState.answers[idx] || 'Não respondida';
+            const status = resp === q.correct ? '✅' : resp === 'Não respondida' ? '⚪' : '❌';
+            return `${status} Q${idx + 1}: ${resp} (Correta: ${q.correct}) - ${q.disciplina}`;
+          }).join('<br>')}
+        </div>
+        <div class="alert alert-warning" style="margin-top: 1rem; text-align: left;">
+          <strong>📄 Sua Resposta Discursiva:</strong><br>
+          <div style="background: var(--bg); padding: 1rem; border-radius: 8px; margin-top: 0.5rem; white-space: pre-wrap; font-family: 'Courier New', monospace; max-height: 400px; overflow-y: auto;">
+            ${App.simuladoState.discursiva || '(Não respondida)'}
+          </div>
+        </div>
+        <button class="btn btn-primary" onclick="location.reload()" style="margin-top: 2rem; padding: 1rem 2rem;">🔄 Refazer Simulado</button>
+      </div>
+    `;
+
+    // Desbloquear abas
+    document.querySelectorAll('.tab-button').forEach(btn => {
+      btn.disabled = false;
+    });
+
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  } catch(e) {
+    alert('❌ Erro ao finalizar simulado: ' + e.message);
+    console.error(e);
+  }
+}
+
+// Expor funções globalmente para onclick inline
+window.startSimulado = startSimulado;
+window.nextQuestion = () => {
+  if (App.simuladoState.currentQ < App.simuladoState.simuladoQuestions.length - 1) {
+    showQuestion(App.simuladoState.currentQ + 1);
+  }
+};
+window.prevQuestion = () => {
+  if (App.simuladoState.currentQ > 0) {
+    showQuestion(App.simuladoState.currentQ - 1);
+  }
+};
+window.finalizarSimulado = finalizarSimulado;
+
+// ========== INIT APP ==========
+document.addEventListener('DOMContentLoaded', () => {
+  try {
+    loadLeiseca();
+    loadQuestions();
+    initTabs();
+    initDarkMode();
+    initSearch();
+    initProgress();
+    initQuestions();
+    initLeisecaRender();
+    initExport();
+    
+    // Simulado já inicializado via onclick inline
+    const textarea = document.getElementById('respostaDiscursiva');
+    if (textarea) {
+      textarea.addEventListener('input', (e) => {
+        const text = e.target.value;
+        const lines = text.split('\n').length;
+        document.getElementById('lineCount').textContent = lines;
+        document.getElementById('charCount').textContent = text.length;
+        App.simuladoState.discursiva = text;
+      });
+    }
+
+    document.getElementById('markReview')?.addEventListener('click', toggleMarkReview);
+    document.getElementById('finishSimulado')?.addEventListener('click', finalizarSimulado);
+    
+    loadProgress();
+  } catch(e) {
+    console.error('Erro na inicialização:', e);
+    alert('❌ Erro ao carregar aplicação. Recarregue a página.');
+  }
+});
+</script>
+<script>(function(){document.addEventListener("click",function(e){var a=e.target.closest("[data-product-id]");if(!a)return;e.preventDefault();var pid=a.getAttribute("data-product-id");if(pid)parent.postMessage({type:"ecto-artifact-link-click",productId:pid},"*")})})();</script>
+</body>
+</html>
